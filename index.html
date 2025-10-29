@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechVision Studios | Innovation & Creativity</title>
-    <meta name="description" content="Leading technology and creative studio specializing in programming, cinematography, photography, technopreneurship, and design.">
+    <title>SABA EXPLOIT | Innovation & Excellence</title>
+    <meta name="description" content="SABA EXPLOIT - Leading technology and creative studio specializing in programming, cinematography, photography, technopreneurship, and design.">
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Particles.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
-<body>
-    <div id="particles-js"></div>
 
+<body class="no-scroll">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-grid"></div>
+        <div class="bg-orb orb1"></div>
+        <div class="bg-orb orb2"></div>
+    </div>
+
+    <!-- Logo Intro -->
+    <div id="logo-intro">
+        <h1 class="intro-logo">SABA EXPLOIT</h1>
+    </div>
+
+    <!-- Header -->
     <header class="glass">
         <nav>
-            <div class="logo">TechVision</div>
+            <div class="logo">SABA EXPLOIT</div>
             <ul class="nav-links">
-                <li><a onclick="navigateTo('home')">Home</a></li>
-                <li><a onclick="navigateTo('vision-mission')">Vision & Mission</a></li>
-                <li><a onclick="navigateTo('projects')">Projects</a></li>
+                <li><a onclick="navigateTo('homepage')">Home</a></li>
+                <li><a onclick="scrollToVAM()">Vision & Mission</a></li>
+                <li><a onclick="scrollToProjects()">Projects</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
@@ -33,689 +46,326 @@
         </nav>
     </header>
 
-    <!-- HOME -->
-    <section id="home" class="active">
-        <div class="container">
-            <h1 class="hero-logo">TECHVISION</h1>
-            <p class="subtitle">Innovation Meets Creativity</p>
-            
-            <div class="division-grid">
-                <div class="division-card glass" onclick="navigateTo('programming')">
-                    <h3>Programming</h3>
-                    <div class="count">8</div>
-                </div>
-                <div class="division-card glass" onclick="navigateTo('cinematography')">
-                    <h3>Cinematography</h3>
-                    <div class="count">6</div>
-                </div>
-                <div class="division-card glass" onclick="navigateTo('photography')">
-                    <h3>Photography</h3>
-                    <div class="count">9</div>
-                </div>
-                <div class="division-card glass" onclick="navigateTo('technopreneurship')">
-                    <h3>Technopreneurship</h3>
-                    <div class="count">5</div>
-                </div>
-                <div class="division-card glass" onclick="navigateTo('design')">
-                    <h3>Design</h3>
-                    <div class="count">9</div>
-                </div>
+    <!-- Homepage Section -->
+    <section id="homepage" class="section active">
+        <!-- Hero -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">SABA EXPLOIT</h1>
+                <p class="hero-subtitle">WHERE INNOVATION MEETS EXCELLENCE</p>
             </div>
         </div>
-    </section>
 
-    <!-- VISION MISSION -->
-    <section id="vision-mission">
-        <div class="container">
-            <h2 class="section-title">Our Vision & Mission</h2>
-            <div class="vision-mission-grid">
-                <div class="vm-card glass">
-                    <h2>Vision</h2>
+        <!-- Vision & Mission -->
+        <div class="vam-section">
+            <div class="vam-container glass">
+                <div class="vam-card">
+                    <h2>VISION</h2>
                     <p>To be the leading creative technology studio that transforms innovative ideas into extraordinary digital experiences, pushing the boundaries of what's possible in the intersection of art and technology.</p>
                 </div>
-                <div class="vm-card glass">
-                    <h2>Mission</h2>
-                    <p>We empower businesses and individuals through cutting-edge technology solutions, stunning visual storytelling, and innovative design thinking. Our mission is to deliver excellence in every project while fostering a culture of creativity, collaboration, and continuous innovation.</p>
+                <div class="vam-card">
+                    <h2>MISSION</h2>
+                    <p>We empower businesses and individuals through cutting-edge technology solutions, stunning visual storytelling, and innovative design thinking. Our mission is to deliver excellence in every project.</p>
                 </div>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+
+        <!-- Divisions -->
+        <div class="division-section">
+            <div class="division-track">
+                <div class="division-item glass glass-interactive" onclick="navigateTo('programming')">
+                    <div class="count">8</div>
+                    <h3>PROGRAMMING</h3>
+                    <p>Expert developers crafting cutting-edge software solutions and innovative applications.</p>
+                </div>
+                <div class="division-item glass glass-interactive" onclick="navigateTo('cinematography')">
+                    <div class="count">6</div>
+                    <h3>CINEMATOGRAPHY</h3>
+                    <p>Visual storytellers capturing moments with cinematic excellence and creative vision.</p>
+                </div>
+                <div class="division-item glass glass-interactive" onclick="navigateTo('photography')">
+                    <div class="count">9</div>
+                    <h3>PHOTOGRAPHY</h3>
+                    <p>Professional photographers creating stunning imagery that tells compelling stories.</p>
+                </div>
+                <div class="division-item glass glass-interactive" onclick="navigateTo('technopreneurship')">
+                    <div class="count">5</div>
+                    <h3>TECHNOPRENEURSHIP</h3>
+                    <p>Business innovators driving growth through strategic thinking and market expertise.</p>
+                </div>
+                <div class="division-item glass glass-interactive" onclick="navigateTo('design')">
+                    <div class="count">9</div>
+                    <h3>DESIGN</h3>
+                    <p>Creative designers building beautiful and functional user experiences.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="projects-section">
+            <h2 class="projects-title">OUR WORKS</h2>
+            <div class="projects-stack">
+                <div class="project-card glass">
+                    <h3>AI-Powered Analytics Platform</h3>
+                    <p>Advanced machine learning platform providing real-time data insights and predictive analytics for enterprise clients.</p>
+                    <span class="project-tag">PROGRAMMING</span>
+                </div>
+                <div class="project-card glass">
+                    <h3>Brand Documentary Series</h3>
+                    <p>Cinematic storytelling for Fortune 500 companies, capturing their journey, vision, and impact on the industry.</p>
+                    <span class="project-tag">CINEMATOGRAPHY</span>
+                </div>
+                <div class="project-card glass">
+                    <h3>Fashion Campaign 2024</h3>
+                    <p>High-end fashion photography for international luxury brands and premier fashion magazines.</p>
+                    <span class="project-tag">PHOTOGRAPHY</span>
+                </div>
+                <div class="project-card glass">
+                    <h3>E-Commerce Marketplace</h3>
+                    <p>Full-stack marketplace solution with integrated payment systems and advanced logistics management.</p>
+                    <span class="project-tag">PROGRAMMING</span>
+                </div>
+                <div class="project-card glass">
+                    <h3>Startup Incubator Program</h3>
+                    <p>Business acceleration program helping tech startups scale from initial concept to market success.</p>
+                    <span class="project-tag">TECHNOPRENEURSHIP</span>
+                </div>
+                <div class="project-card glass">
+                    <h3>Complete Brand Transformation</h3>
+                    <p>End-to-end rebranding including logo design, identity system, and comprehensive digital presence.</p>
+                    <span class="project-tag">DESIGN</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- PROGRAMMING -->
-    <section id="programming">
-        <div class="container">
-            <h2 class="section-title">Programming Division</h2>
-            <div class="members-grid">
-                <div class="member-card glass">
-                    <div class="member-avatar">A</div>
-                    <h4>Alex Chen</h4>
-                    <p>Lead Developer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">B</div>
-                    <h4>Brian Smith</h4>
-                    <p>Full Stack Dev</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">C</div>
-                    <h4>Claire Wong</h4>
-                    <p>Backend Engineer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">D</div>
-                    <h4>David Park</h4>
-                    <p>Frontend Dev</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">E</div>
-                    <h4>Emma Davis</h4>
-                    <p>DevOps Engineer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">F</div>
-                    <h4>Frank Liu</h4>
-                    <p>Mobile Developer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">G</div>
-                    <h4>Grace Kim</h4>
-                    <p>Software Architect</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">H</div>
-                    <h4>Henry Zhang</h4>
-                    <p>AI Engineer</p>
-                </div>
+    <!-- Programming Section -->
+    <section id="programming" class="section member-section">
+        <h2 class="member-title">PROGRAMMING DIVISION</h2>
+        <div class="members-grid">
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">A</div>
+                <h4>Alex Chen</h4>
+                <p>Lead Developer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">B</div>
+                <h4>Brian Smith</h4>
+                <p>Full Stack Developer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">C</div>
+                <h4>Claire Wong</h4>
+                <p>Backend Engineer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">D</div>
+                <h4>David Park</h4>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">E</div>
+                <h4>Emma Davis</h4>
+                <p>DevOps Engineer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">F</div>
+                <h4>Frank Liu</h4>
+                <p>Mobile Developer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">G</div>
+                <h4>Grace Kim</h4>
+                <p>Software Architect</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">H</div>
+                <h4>Henry Zhang</h4>
+                <p>AI Engineer</p>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+        <button class="back-btn" onclick="navigateTo('homepage')">← BACK</button>
     </section>
 
-    <!-- CINEMATOGRAPHY -->
-    <section id="cinematography">
-        <div class="container">
-            <h2 class="section-title">Cinematography Division</h2>
-            <div class="members-grid">
-                <div class="member-card glass">
-                    <div class="member-avatar">I</div>
-                    <h4>Isabella Cruz</h4>
-                    <p>Director of Photography</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">J</div>
-                    <h4>James Wilson</h4>
-                    <p>Camera Operator</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">K</div>
-                    <h4>Kate Miller</h4>
-                    <p>Video Editor</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">L</div>
-                    <h4>Leo Martinez</h4>
-                    <p>Drone Pilot</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">M</div>
-                    <h4>Maya Johnson</h4>
-                    <p>Color Grader</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">N</div>
-                    <h4>Nathan Brown</h4>
-                    <p>Sound Designer</p>
-                </div>
+    <!-- Cinematography Section -->
+    <section id="cinematography" class="section member-section">
+        <h2 class="member-title">CINEMATOGRAPHY DIVISION</h2>
+        <div class="members-grid">
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">I</div>
+                <h4>Isabella Cruz</h4>
+                <p>Director of Photography</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">J</div>
+                <h4>James Wilson</h4>
+                <p>Camera Operator</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">K</div>
+                <h4>Kate Miller</h4>
+                <p>Video Editor</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">L</div>
+                <h4>Leo Martinez</h4>
+                <p>Drone Pilot</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">M</div>
+                <h4>Maya Johnson</h4>
+                <p>Color Grader</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">N</div>
+                <h4>Nathan Brown</h4>
+                <p>Sound Designer</p>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+        <button class="back-btn" onclick="navigateTo('homepage')">← BACK</button>
     </section>
 
-    <!-- PHOTOGRAPHY -->
-    <section id="photography">
-        <div class="container">
-            <h2 class="section-title">Photography Division</h2>
-            <div class="members-grid">
-                <div class="member-card glass">
-                    <div class="member-avatar">O</div>
-                    <h4>Olivia Taylor</h4>
-                    <p>Lead Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">P</div>
-                    <h4>Peter Anderson</h4>
-                    <p>Portrait Specialist</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">Q</div>
-                    <h4>Quinn Thomas</h4>
-                    <p>Product Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">R</div>
-                    <h4>Rachel Garcia</h4>
-                    <p>Event Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">S</div>
-                    <h4>Sam Rodriguez</h4>
-                    <p>Lifestyle Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">T</div>
-                    <h4>Tara Lee</h4>
-                    <p>Fashion Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">U</div>
-                    <h4>Uma Patel</h4>
-                    <p>Photo Editor</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">V</div>
-                    <h4>Victor White</h4>
-                    <p>Commercial Photographer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">W</div>
-                    <h4>Wendy Hall</h4>
-                    <p>Studio Manager</p>
-                </div>
+    <!-- Photography Section -->
+    <section id="photography" class="section member-section">
+        <h2 class="member-title">PHOTOGRAPHY DIVISION</h2>
+        <div class="members-grid">
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">O</div>
+                <h4>Olivia Taylor</h4>
+                <p>Lead Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">P</div>
+                <h4>Peter Anderson</h4>
+                <p>Portrait Specialist</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">Q</div>
+                <h4>Quinn Thomas</h4>
+                <p>Product Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">R</div>
+                <h4>Rachel Garcia</h4>
+                <p>Event Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">S</div>
+                <h4>Sam Rodriguez</h4>
+                <p>Lifestyle Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">T</div>
+                <h4>Tara Lee</h4>
+                <p>Fashion Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">U</div>
+                <h4>Uma Patel</h4>
+                <p>Photo Editor</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">V</div>
+                <h4>Victor White</h4>
+                <p>Commercial Photographer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">W</div>
+                <h4>Wendy Hall</h4>
+                <p>Studio Manager</p>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+        <button class="back-btn" onclick="navigateTo('homepage')">← BACK</button>
     </section>
 
-    <!-- TECHNOPRENEURSHIP -->
-    <section id="technopreneurship">
-        <div class="container">
-            <h2 class="section-title">Technopreneurship Division</h2>
-            <div class="members-grid">
-                <div class="member-card glass">
-                    <div class="member-avatar">X</div>
-                    <h4>Xavier King</h4>
-                    <p>Business Strategist</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">Y</div>
-                    <h4>Yara Scott</h4>
-                    <p>Innovation Lead</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">Z</div>
-                    <h4>Zack Green</h4>
-                    <p>Growth Hacker</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">A2</div>
-                    <h4>Aria Adams</h4>
-                    <p>Market Analyst</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">B2</div>
-                    <h4>Ben Carter</h4>
-                    <p>Product Manager</p>
-                </div>
+    <!-- Technopreneurship Section -->
+    <section id="technopreneurship" class="section member-section">
+        <h2 class="member-title">TECHNOPRENEURSHIP DIVISION</h2>
+        <div class="members-grid">
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">X</div>
+                <h4>Xavier King</h4>
+                <p>Business Strategist</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">Y</div>
+                <h4>Yara Scott</h4>
+                <p>Innovation Lead</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">Z</div>
+                <h4>Zack Green</h4>
+                <p>Growth Hacker</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">A2</div>
+                <h4>Aria Adams</h4>
+                <p>Market Analyst</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">B2</div>
+                <h4>Ben Carter</h4>
+                <p>Product Manager</p>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+        <button class="back-btn" onclick="navigateTo('homepage')">← BACK</button>
     </section>
 
-    <!-- DESIGN -->
-    <section id="design">
-        <div class="container">
-            <h2 class="section-title">Design Division</h2>
-            <div class="members-grid">
-                <div class="member-card glass">
-                    <div class="member-avatar">C2</div>
-                    <h4>Chloe Baker</h4>
-                    <p>Creative Director</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">D2</div>
-                    <h4>Daniel Moore</h4>
-                    <p>UI/UX Designer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">E2</div>
-                    <h4>Eva Lewis</h4>
-                    <p>Brand Designer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">F2</div>
-                    <h4>Felix Walker</h4>
-                    <p>Motion Designer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">G2</div>
-                    <h4>Gina Young</h4>
-                    <p>Graphic Designer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">H2</div>
-                    <h4>Hugo Allen</h4>
-                    <p>3D Artist</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">I2</div>
-                    <h4>Iris Hill</h4>
-                    <p>Illustrator</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">J2</div>
-                    <h4>Jake Nelson</h4>
-                    <p>Web Designer</p>
-                </div>
-                <div class="member-card glass">
-                    <div class="member-avatar">K2</div>
-                    <h4>Kira Wright</h4>
-                    <p>Art Director</p>
-                </div>
+    <!-- Design Section -->
+    <section id="design" class="section member-section">
+        <h2 class="member-title">DESIGN DIVISION</h2>
+        <div class="members-grid">
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">C2</div>
+                <h4>Chloe Baker</h4>
+                <p>Creative Director</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">D2</div>
+                <h4>Daniel Moore</h4>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">E2</div>
+                <h4>Eva Lewis</h4>
+                <p>Brand Designer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">F2</div>
+                <h4>Felix Walker</h4>
+                <p>Motion Designer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">G2</div>
+                <h4>Gina Young</h4>
+                <p>Graphic Designer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">H2</div>
+                <h4>Hugo Allen</h4>
+                <p>3D Artist</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">I2</div>
+                <h4>Iris Hill</h4>
+                <p>Illustrator</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">J2</div>
+                <h4>Jake Nelson</h4>
+                <p>Web Designer</p>
+            </div>
+            <div class="member-card glass glass-interactive">
+                <div class="member-avatar">K2</div>
+                <h4>Kira Wright</h4>
+                <p>Art Director</p>
             </div>
         </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Our Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card glass">
-                    <div>
-                        <h3>AI-Powered Analytics</h3>
-                        <p>Advanced machine learning platform for real-time data insights and predictive analytics.</p>
-                    </div>
-                    <div class="project-tag">Programming</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Brand Documentary</h3>
-                        <p>Cinematic storytelling for Fortune 500 companies, capturing their journey and vision.</p>
-                    </div>
-                    <div class="project-tag">Cinematography</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Fashion Campaign 2024</h3>
-                        <p>High-end fashion photography for international luxury brands and magazines.</p>
-                    </div>
-                    <div class="project-tag">Photography</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>E-Commerce Platform</h3>
-                        <p>Full-stack marketplace solution with integrated payment and logistics systems.</p>
-                    </div>
-                    <div class="project-tag">Programming</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Startup Incubator</h3>
-                        <p>Business acceleration program helping tech startups scale from idea to market.</p>
-                    </div>
-                    <div class="project-tag">Technopreneurship</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Rebranding Initiative</h3>
-                        <p>Complete brand transformation including logo, identity system, and digital presence.</p>
-                    </div>
-                    <div class="project-tag">Design</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Music Video Production</h3>
-                        <p>Award-winning music video featuring cutting-edge cinematography and visual effects.</p>
-                    </div>
-                    <div class="project-tag">Cinematography</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Mobile App Suite</h3>
-                        <p>Cross-platform mobile applications with seamless user experience and performance.</p>
-                    </div>
-                    <div class="project-tag">Programming</div>
-                </div>
-                <div class="project-card glass">
-                    <div>
-                        <h3>Product Photography</h3>
-                        <p>Studio and lifestyle product photography for e-commerce and marketing campaigns.</p>
-                    </div>
-                    <div class="project-tag">Photography</div>
-                </div>
-            </div>
-        </div>
-        <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+        <button class="back-btn" onclick="navigateTo('homepage')">← BACK</button>
     </section>
 
     <footer class="glass">
-        <p>&copy; 2025 TechVision Studios. All rights reserved.</p>
+        <p>&copy; 2025 SABA EXPLOIT. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Particles Configuration
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: ['#00f2ff', '#7b2ff7', '#ff2e97'] },
-                shape: { type: 'circle' },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#00f2ff',
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: 'none',
-                    random: true,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: { enable: true, mode: 'grab' },
-                    onclick: { enable: true, mode: 'push' },
-                    resize: true
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
-                    push: { particles_nb: 4 }
-                }
-            },
-            retina_detect: true
-        });
-
-        // Navigation System
-        let currentSection = 'home';
-        let isAnimating = false;
-
-        function navigateTo(sectionId) {
-            if (isAnimating || currentSection === sectionId) return;
-            isAnimating = true;
-
-            const current = document.getElementById(currentSection);
-            const next = document.getElementById(sectionId);
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-
-            // Close mobile menu
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-
-            // Handle home section logo animation
-            if (currentSection === 'home') {
-                const logo = document.querySelector('.hero-logo');
-                const subtitle = document.querySelector('.subtitle');
-                const divisionGrid = document.querySelector('.division-grid');
-                
-                gsap.timeline()
-                    .to(divisionGrid, { 
-                        opacity: 0, 
-                        y: 50, 
-                        duration: 0.5,
-                        ease: 'power2.in'
-                    })
-                    .to(subtitle, { 
-                        opacity: 0, 
-                        y: -20, 
-                        duration: 0.5 
-                    }, '-=0.3')
-                    .to(logo, { 
-                        scale: 0.5, 
-                        y: -200, 
-                        opacity: 0, 
-                        duration: 0.8,
-                        ease: 'power2.in'
-                    }, '-=0.2')
-                    .call(() => {
-                        current.classList.remove('active');
-                        next.classList.add('active');
-                        animateNextSection(next, sectionId);
-                    });
-            } else {
-                gsap.to(current, {
-                    opacity: 0,
-                    scale: 0.95,
-                    duration: 0.5,
-                    ease: 'power2.in',
-                    onComplete: () => {
-                        current.classList.remove('active');
-                        next.classList.add('active');
-                        
-                        if (sectionId === 'home') {
-                            animateHomeSection();
-                        } else {
-                            animateNextSection(next, sectionId);
-                        }
-                    }
-                });
-            }
-
-            currentSection = sectionId;
-        }
-
-        function animateHomeSection() {
-            const logo = document.querySelector('.hero-logo');
-            const subtitle = document.querySelector('.subtitle');
-            const divisionGrid = document.querySelector('.division-grid');
-            
-            gsap.set(logo, { scale: 0.5, y: -200, opacity: 0 });
-            gsap.set(subtitle, { opacity: 0, y: -20 });
-            gsap.set(divisionGrid, { opacity: 0, y: 50 });
-
-            gsap.timeline()
-                .to(logo, { 
-                    scale: 1, 
-                    y: 0, 
-                    opacity: 1, 
-                    duration: 1,
-                    ease: 'power3.out'
-                })
-                .to(subtitle, { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 0.8,
-                    ease: 'power2.out'
-                }, '-=0.5')
-                .to(divisionGrid, { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 0.8,
-                    ease: 'power2.out'
-                }, '-=0.5')
-                .call(() => {
-                    isAnimating = false;
-                    animateDivisionCards();
-                });
-        }
-
-        function animateNextSection(section, sectionId) {
-            gsap.fromTo(section, 
-                { opacity: 0, scale: 0.95 },
-                { 
-                    opacity: 1, 
-                    scale: 1, 
-                    duration: 0.6,
-                    ease: 'power2.out',
-                    onComplete: () => {
-                        isAnimating = false;
-                        
-                        // Animate cards/elements in the new section
-                        const cards = section.querySelectorAll('.glass');
-                        gsap.fromTo(cards,
-                            { opacity: 0, y: 30 },
-                            { 
-                                opacity: 1, 
-                                y: 0, 
-                                duration: 0.6,
-                                stagger: 0.1,
-                                ease: 'power2.out'
-                            }
-                        );
-                    }
-                }
-            );
-        }
-
-        function animateDivisionCards() {
-            const cards = document.querySelectorAll('.division-card');
-            gsap.fromTo(cards,
-                { opacity: 0, scale: 0.8, rotationY: 90 },
-                { 
-                    opacity: 1, 
-                    scale: 1, 
-                    rotationY: 0,
-                    duration: 0.8,
-                    stagger: 0.15,
-                    ease: 'back.out(1.7)'
-                }
-            );
-        }
-
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        }
-
-        // Enhanced glass card hover effects
-        document.addEventListener('DOMContentLoaded', () => {
-            const glassCards = document.querySelectorAll('.glass');
-            
-            glassCards.forEach(card => {
-                card.addEventListener('mouseenter', function(e) {
-                    gsap.to(this, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-
-                card.addEventListener('mouseleave', function(e) {
-                    gsap.to(this, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-
-                card.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 10;
-                    const rotateY = (centerX - x) / 10;
-                    
-                    gsap.to(this, {
-                        rotationX: rotateX,
-                        rotationY: rotateY,
-                        duration: 0.3,
-                        ease: 'power2.out',
-                        transformPerspective: 1000
-                    });
-                });
-
-                card.addEventListener('mouseleave', function(e) {
-                    gsap.to(this, {
-                        rotationX: 0,
-                        rotationY: 0,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-                });
-            });
-
-            // Initial home animation
-            setTimeout(() => {
-                animateDivisionCards();
-            }, 500);
-
-            // Prevent scrolling
-            document.body.style.overflow = 'hidden';
-            
-            // Disable scroll events
-            window.addEventListener('wheel', (e) => {
-                e.preventDefault();
-            }, { passive: false });
-
-            window.addEventListener('touchmove', (e) => {
-                if (e.target.closest('.members-grid') || e.target.closest('.projects-grid')) {
-                    return;
-                }
-                e.preventDefault();
-            }, { passive: false });
-        });
-
-        // Header animation on scroll (opacity change)
-        let lastScrollY = 0;
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > lastScrollY) {
-                gsap.to(header, { opacity: 0.8, duration: 0.3 });
-            } else {
-                gsap.to(header, { opacity: 1, duration: 0.3 });
-            }
-            lastScrollY = window.scrollY;
-        });
-
-        // Liquid glass ripple effect on click
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.glass')) {
-                const card = e.target.closest('.glass');
-                const ripple = document.createElement('div');
-                const rect = card.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    border-radius: 50%;
-                    background: radial-gradient(circle, rgba(0,242,255,0.4) 0%, transparent 70%);
-                    left: ${x}px;
-                    top: ${y}px;
-                    pointer-events: none;
-                    transform: scale(0);
-                `;
-
-                card.style.position = 'relative';
-                card.style.overflow = 'hidden';
-                card.appendChild(ripple);
-
-                gsap.to(ripple, {
-                    scale: 2,
-                    opacity: 0,
-                    duration: 0.6,
-                    ease: 'power2.out',
-                    onComplete: () => ripple.remove()
-                });
-            }
-        });
-    </script>
 </body>
 </html>
