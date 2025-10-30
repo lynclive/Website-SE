@@ -1,0 +1,79 @@
+.member-card,
+.project-card,
+.division-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.member-card {
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 3px solid var(--primary-red);
+}
+
+.member-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.member-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.project-card {
+  min-width: 450px;
+  flex-shrink: 0;
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.project-card h3 {
+  font-size: 2rem;
+  color: var(--primary-red);
+  margin-bottom: 20px;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid var(--primary-red);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-red);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 350px;
+    padding: 30px;
+  }
+
+  .member-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+}

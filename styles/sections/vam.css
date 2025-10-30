@@ -1,0 +1,42 @@
+.vam-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 40px;
+  position: relative;
+}
+
+.vam-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  border-radius: 40px;
+  padding: 80px;
+}
+
+.vam-card h2 {
+  font-size: 3rem;
+  color: var(--primary-red);
+  margin-bottom: 30px;
+}
+
+.vam-card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .vam-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .vam-card h2 {
+    font-size: 2rem;
+  }
+}
