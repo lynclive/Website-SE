@@ -30,8 +30,8 @@ export const setupGlassEffects = () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = (y - centerY) / 10;
-      const rotateY = (centerX - x) / 10;
+      const rotateX = (y - centerY) / 100;
+      const rotateY = (centerX - x) / 100;
 
       gsap.to(this, {
         rotationX: rotateX,
