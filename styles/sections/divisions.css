@@ -14,53 +14,81 @@
 
 .division-track {
   display: flex;
-  gap: 80px;
+  gap: 60px;
   padding: 0 40px;
+  padding-left: 40vw; /* Start from 40vw to the right */
+  padding-right: 40vw; /* End with 40vw space on the right */
   will-change: transform;
+  align-items: flex-start; /* Align to top of container */
 }
 
 .division-item {
-  min-width: 240px;
-  min-height: 40px;
+  width: 300px;
+  height: 300px;
   flex-shrink: 0;
-  padding: 35px 25px;
+  padding: 30px;
   border-radius: 30px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Zigzag pattern - starting from top */
 .division-item:nth-child(odd) {
-  top: -215px;
+  margin-top: -100px; /* Move up to account for centering */
 }
 
 .division-item:nth-child(even) {
-  margin-top: 50px;
+  margin-top: 100px; /* Move down to create zigzag */
 }
 
 .division-item h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--primary-red);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .division-item .count {
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .division-item p {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
   .division-item {
-    min-width: 260px;
+    width: 280px;
+    height: 280px;
+    padding: 25px;
+  }
+
+  .division-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .division-item .count {
+    font-size: 2.5rem;
+  }
+
+  .division-item p {
+    font-size: 0.85rem;
+  }
+
+  .division-item:nth-child(odd) {
+    margin-top: -80px;
   }
 
   .division-item:nth-child(even) {
-    margin-top: 50px;
+    margin-top: 80px;
   }
 }

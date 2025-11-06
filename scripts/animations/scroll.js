@@ -36,16 +36,18 @@ export const setupScrollAnimations = () => {
   const divisionTrack = document.querySelector('.division-track');
   const divisionSection = document.querySelector('.division-section');
   const trackWidth = divisionTrack.scrollWidth;
+  const viewportWidth = window.innerWidth;
 
   gsap.to(divisionTrack, {
     scrollTrigger: {
       trigger: divisionSection,
       start: 'top top',
-      end: () => `+=${trackWidth * 1.5}`,
+      end: () => `+=${trackWidth}`,
       scrub: 1,
       pin: true,
+      anticipatePin: 1,
     },
-    x: () => -(trackWidth - window.innerWidth + 100),
+    x: () => -(trackWidth - viewportWidth),
     ease: 'none',
   });
 
