@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Reserve space for scrollbar to prevent layout shift */
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--black);
@@ -30,8 +35,10 @@ body.no-scroll {
   position: absolute;
   width: 200%;
   height: 200%;
-  background-image:
-    linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(255, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
@@ -98,19 +105,9 @@ body.no-scroll {
   left: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 9999;
   background: var(--black);
-}
-
-.intro-logo {
-  font-size: 8rem;
-  font-weight: 900;
-  color: var(--primary-red);
-  letter-spacing: 10px;
-  text-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 /* Sections */
@@ -151,10 +148,6 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
-  .intro-logo {
-    font-size: 4rem;
-  }
-
   .back-btn {
     bottom: 20px;
     right: 20px;

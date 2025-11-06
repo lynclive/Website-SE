@@ -143,7 +143,7 @@ build/
 
 ## File: `index.html`
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -364,42 +364,42 @@ build/
       <div class="members-grid">
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">A</div>
-          <h4>Alex Chen</h4>
+          <h4>Ahmad Nur Taufiq</h4>
           <p>Lead Developer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">B</div>
-          <h4>Brian Smith</h4>
+          <h4>Alyana Diah Ramadhani Pramono</h4>
           <p>Full Stack Developer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">C</div>
-          <h4>Claire Wong</h4>
+          <h4>Kennydia Fatharani</h4>
           <p>Backend Engineer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">D</div>
-          <h4>David Park</h4>
+          <h4>Ronny Kuncoro Jati</h4>
           <p>Frontend Developer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">E</div>
-          <h4>Emma Davis</h4>
+          <h4>Agung Rezkiana Putra</h4>
           <p>DevOps Engineer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">F</div>
-          <h4>Frank Liu</h4>
+          <h4>Saputro Aji Wicaksono</h4>
           <p>Mobile Developer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">G</div>
-          <h4>Grace Kim</h4>
+          <h4>Fauzan Arif Aldiano</h4>
           <p>Software Architect</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">H</div>
-          <h4>Henry Zhang</h4>
+          <h4>Isyana Latifah </h4>
           <p>AI Engineer</p>
         </div>
       </div>
@@ -412,32 +412,32 @@ build/
       <div class="members-grid">
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">I</div>
-          <h4>Isabella Cruz</h4>
+          <h4>Alif Rohman Ananto</h4>
           <p>Director of Photography</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">J</div>
-          <h4>James Wilson</h4>
+          <h4>Muhammad Fawwaz Elhakim</h4>
           <p>Camera Operator</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">K</div>
-          <h4>Kate Miller</h4>
+          <h4>Yashinta Ledy Kristi</h4>
           <p>Video Editor</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">L</div>
-          <h4>Leo Martinez</h4>
+          <h4>Erina Tyas Salsabila</h4>
           <p>Drone Pilot</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">M</div>
-          <h4>Maya Johnson</h4>
+          <h4>Jaasmine Aisha Azzura</h4>
           <p>Color Grader</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">N</div>
-          <h4>Nathan Brown</h4>
+          <h4>Restu Faiza Purnomo </h4>
           <p>Sound Designer</p>
         </div>
       </div>
@@ -450,22 +450,22 @@ build/
       <div class="members-grid">
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">O</div>
-          <h4>Olivia Taylor</h4>
+          <h4>Muhammad Fathurrahman Najib</h4>
           <p>Lead Photographer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">P</div>
-          <h4>Peter Anderson</h4>
+          <h4>Muhammad Arfan Aliy</h4>
           <p>Portrait Specialist</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">Q</div>
-          <h4>Quinn Thomas</h4>
+          <h4>Arshavina Maulida</h4>
           <p>Product Photographer</p>
         </div>
         <div class="member-card glass glass-interactive">
           <div class="member-avatar">R</div>
-          <h4>Rachel Garcia</h4>
+          <h4>Verena Orris Eggnis Deo</h4>
           <p>Event Photographer</p>
         </div>
         <div class="member-card glass glass-interactive">
