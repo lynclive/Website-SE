@@ -1,0 +1,14 @@
+footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: 15px 40px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}

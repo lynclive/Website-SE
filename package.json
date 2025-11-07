@@ -1,0 +1,26 @@
+{
+  "name": "saba-exploit",
+  "version": "1.0.0",
+  "description": "SABA EXPLOIT - Organisasi Berbasis IT",
+  "main": "index.html",
+  "scripts": {
+    "lint": "eslint 'scripts/**/*.js'",
+    "lint:fix": "eslint 'scripts/**/*.js' --fix",
+    "format": "prettier --write '**/*.{js,css,html,json,md}'",
+    "format:check": "prettier --check '**/*.{js,css,html,json,md}'"
+  },
+  "keywords": [
+    "website",
+    "portfolio",
+    "gsap",
+    "lenis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3"
+  }
+}

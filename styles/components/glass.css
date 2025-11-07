@@ -1,0 +1,18 @@
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.glass-interactive {
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.glass-interactive:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: var(--primary-red);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(255, 0, 0, 0.4);
+}

@@ -1,0 +1,1767 @@
+# SABA EXPLOIT - Modular Project Structure
+
+## Project Structure
+```
+saba-exploit/
+├── index.html
+├── package.json
+├── .eslintrc.json
+├── .prettierrc
+├── .gitignore
+├── styles/
+│   ├── main.css
+│   ├── variables.css
+│   ├── base.css
+│   ├── components/
+│   │   ├── header.css
+│   │   ├── footer.css
+│   │   ├── glass.css
+│   │   └── cards.css
+│   └── sections/
+│       ├── hero.css
+│       ├── vam.css
+│       ├── divisions.css
+│       ├── projects.css
+│       └── members.css
+├── scripts/
+│   ├── main.js
+│   ├── config/
+│   │   └── lenis.config.js
+│   ├── animations/
+│   │   ├── intro.js
+│   │   ├── scroll.js
+│   │   └── glass-effects.js
+│   ├── navigation/
+│   │   └── router.js
+│   └── utils/
+│       └── helpers.js
+└── assets/
+    └── images/
+```
+
+## Installation Instructions
+
+1. Create project folder and navigate to it:
+```bash
+mkdir saba-exploit
+cd saba-exploit
+```
+
+2. Initialize npm and install dependencies:
+```bash
+npm init -y
+npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier
+```
+
+3. Create all the files below in their respective folders
+
+---
+
+## File: `package.json`
+```json
+{
+  "name": "saba-exploit",
+  "version": "1.0.0",
+  "description": "SABA EXPLOIT - Organisasi Berbasis IT",
+  "main": "index.html",
+  "scripts": {
+    "lint": "eslint 'scripts/**/*.js'",
+    "lint:fix": "eslint 'scripts/**/*.js' --fix",
+    "format": "prettier --write '**/*.{js,css,html,json,md}'",
+    "format:check": "prettier --check '**/*.{js,css,html,json,md}'"
+  },
+  "keywords": ["website", "portfolio", "gsap", "lenis"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3"
+  }
+}
+```
+
+---
+
+## File: `.eslintrc.json`
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "prefer-const": "error",
+    "no-var": "error",
+    "prettier/prettier": "error"
+  },
+  "globals": {
+    "gsap": "readonly",
+    "ScrollTrigger": "readonly",
+    "Lenis": "readonly"
+  }
+}
+```
+
+---
+
+## File: `.prettierrc`
+```json
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "always",
+  "endOfLine": "lf"
+}
+```
+
+---
+
+## File: `.gitignore`
+```
+node_modules/
+.DS_Store
+*.log
+.env
+dist/
+build/
+```
+
+---
+
+## File: `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SABA EXPLOIT | Innovation & Excellence</title>
+    <meta
+      name="description"
+      content="SABA EXPLOIT - SMAN 1 Bantul's technology and creative organization specializing in programming, cinematography, photography, technopreneurship, and design."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components/glass.css" />
+    <link rel="stylesheet" href="styles/components/header.css" />
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/cards.css" />
+    <link rel="stylesheet" href="styles/sections/hero.css" />
+    <link rel="stylesheet" href="styles/sections/vam.css" />
+    <link rel="stylesheet" href="styles/sections/divisions.css" />
+    <link rel="stylesheet" href="styles/sections/projects.css" />
+    <link rel="stylesheet" href="styles/sections/members.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  </head>
+  <body class="no-scroll">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="bg-grid"></div>
+      <div class="bg-orb orb1"></div>
+      <div class="bg-orb orb2"></div>
+    </div>
+
+    <!-- Logo Intro -->
+    <div id="logo-intro">
+      <h1 class="intro-logo">SABA EXPLOIT</h1>
+    </div>
+
+    <!-- Header -->
+    <header class="glass">
+      <nav>
+        <div class="logo">SABA EXPLOIT</div>
+        <ul class="nav-links">
+          <li><a data-navigate="homepage">Home</a></li>
+          <li><a data-scroll="vam">Vision & Mission</a></li>
+          <li><a data-scroll="projects">Projects</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Homepage Section -->
+    <section id="homepage" class="section active">
+      <!-- Hero -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">SABA EXPLOIT</h1>
+          <p class="hero-subtitle">WHERE INNOVATION MEETS EXCELLENCE</p>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="vam-section">
+        <div class="vam-container glass">
+          <div class="vam-card">
+            <h2>VISION</h2>
+            <p>
+              To be the leading creative technology studio that transforms
+              innovative ideas into extraordinary digital experiences, pushing
+              the boundaries of what's possible in the intersection of art and
+              technology.
+            </p>
+          </div>
+          <div class="vam-card">
+            <h2>MISSION</h2>
+            <p>
+              We empower businesses and individuals through cutting-edge
+              technology solutions, stunning visual storytelling, and innovative
+              design thinking. Our mission is to deliver excellence in every
+              project.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divisions -->
+      <div class="division-section">
+        <div class="division-wrapper">
+          <div class="division-track">
+            <div
+              class="division-item glass glass-interactive"
+              data-navigate="programming"
+            >
+              <div class="count">8</div>
+              <h3>PROGRAMMING</h3>
+              <p>
+                Expert developers crafting cutting-edge software solutions and
+                innovative applications.
+              </p>
+            </div>
+            <div
+              class="division-item glass glass-interactive"
+              data-navigate="cinematography"
+            >
+              <div class="count">6</div>
+              <h3>CINEMATOGRAPHY</h3>
+              <p>
+                Visual storytellers capturing moments with cinematic excellence
+                and creative vision.
+              </p>
+            </div>
+            <div
+              class="division-item glass glass-interactive"
+              data-navigate="photography"
+            >
+              <div class="count">9</div>
+              <h3>PHOTOGRAPHY</h3>
+              <p>
+                Professional photographers creating stunning imagery that tells
+                compelling stories.
+              </p>
+            </div>
+            <div
+              class="division-item glass glass-interactive"
+              data-navigate="technopreneurship"
+            >
+              <div class="count">5</div>
+              <h3>TECHNOPRENEURSHIP</h3>
+              <p>
+                Business innovators driving growth through strategic thinking
+                and market expertise.
+              </p>
+            </div>
+            <div
+              class="division-item glass glass-interactive"
+              data-navigate="design"
+            >
+              <div class="count">9</div>
+              <h3>DESIGN</h3>
+              <p>
+                Creative designers building beautiful and functional user
+                experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="projects-section">
+        <h2 class="projects-title">OUR WORKS</h2>
+        <div class="projects-wrapper">
+          <div class="projects-stack">
+            <div class="project-card glass glass-interactive">
+              <h3>AI-Powered Analytics Platform</h3>
+              <p>
+                Advanced machine learning platform providing real-time data
+                insights and predictive analytics for enterprise clients.
+              </p>
+              <span class="project-tag">PROGRAMMING</span>
+            </div>
+            <div class="project-card glass glass-interactive">
+              <h3>Brand Documentary Series</h3>
+              <p>
+                Cinematic storytelling for Fortune 500 companies, capturing
+                their journey, vision, and impact on the industry.
+              </p>
+              <span class="project-tag">CINEMATOGRAPHY</span>
+            </div>
+            <div class="project-card glass glass-interactive">
+              <h3>Fashion Campaign 2024</h3>
+              <p>
+                High-end fashion photography for international luxury brands and
+                premier fashion magazines.
+              </p>
+              <span class="project-tag">PHOTOGRAPHY</span>
+            </div>
+            <div class="project-card glass glass-interactive">
+              <h3>E-Commerce Marketplace</h3>
+              <p>
+                Full-stack marketplace solution with integrated payment systems
+                and advanced logistics management.
+              </p>
+              <span class="project-tag">PROGRAMMING</span>
+            </div>
+            <div class="project-card glass glass-interactive">
+              <h3>Startup Incubator Program</h3>
+              <p>
+                Business acceleration program helping tech startups scale from
+                initial concept to market success.
+              </p>
+              <span class="project-tag">TECHNOPRENEURSHIP</span>
+            </div>
+            <div class="project-card glass glass-interactive">
+              <h3>Complete Brand Transformation</h3>
+              <p>
+                End-to-end rebranding including logo design, identity system,
+                and comprehensive digital presence.
+              </p>
+              <span class="project-tag">DESIGN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programming Section -->
+    <section id="programming" class="section member-section">
+      <h2 class="member-title">PROGRAMMING DIVISION</h2>
+      <div class="members-grid">
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">A</div>
+          <h4>Alex Chen</h4>
+          <p>Lead Developer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">B</div>
+          <h4>Brian Smith</h4>
+          <p>Full Stack Developer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">C</div>
+          <h4>Claire Wong</h4>
+          <p>Backend Engineer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">D</div>
+          <h4>David Park</h4>
+          <p>Frontend Developer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">E</div>
+          <h4>Emma Davis</h4>
+          <p>DevOps Engineer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">F</div>
+          <h4>Frank Liu</h4>
+          <p>Mobile Developer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">G</div>
+          <h4>Grace Kim</h4>
+          <p>Software Architect</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">H</div>
+          <h4>Henry Zhang</h4>
+          <p>AI Engineer</p>
+        </div>
+      </div>
+      <button class="back-btn" data-navigate="homepage">← BACK</button>
+    </section>
+
+    <!-- Cinematography Section -->
+    <section id="cinematography" class="section member-section">
+      <h2 class="member-title">CINEMATOGRAPHY DIVISION</h2>
+      <div class="members-grid">
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">I</div>
+          <h4>Isabella Cruz</h4>
+          <p>Director of Photography</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">J</div>
+          <h4>James Wilson</h4>
+          <p>Camera Operator</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">K</div>
+          <h4>Kate Miller</h4>
+          <p>Video Editor</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">L</div>
+          <h4>Leo Martinez</h4>
+          <p>Drone Pilot</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">M</div>
+          <h4>Maya Johnson</h4>
+          <p>Color Grader</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">N</div>
+          <h4>Nathan Brown</h4>
+          <p>Sound Designer</p>
+        </div>
+      </div>
+      <button class="back-btn" data-navigate="homepage">← BACK</button>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="section member-section">
+      <h2 class="member-title">PHOTOGRAPHY DIVISION</h2>
+      <div class="members-grid">
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">O</div>
+          <h4>Olivia Taylor</h4>
+          <p>Lead Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">P</div>
+          <h4>Peter Anderson</h4>
+          <p>Portrait Specialist</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">Q</div>
+          <h4>Quinn Thomas</h4>
+          <p>Product Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">R</div>
+          <h4>Rachel Garcia</h4>
+          <p>Event Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">S</div>
+          <h4>Sam Rodriguez</h4>
+          <p>Lifestyle Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">T</div>
+          <h4>Tara Lee</h4>
+          <p>Fashion Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">U</div>
+          <h4>Uma Patel</h4>
+          <p>Photo Editor</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">V</div>
+          <h4>Victor White</h4>
+          <p>Commercial Photographer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">W</div>
+          <h4>Wendy Hall</h4>
+          <p>Studio Manager</p>
+        </div>
+      </div>
+      <button class="back-btn" data-navigate="homepage">← BACK</button>
+    </section>
+
+    <!-- Technopreneurship Section -->
+    <section id="technopreneurship" class="section member-section">
+      <h2 class="member-title">TECHNOPRENEURSHIP DIVISION</h2>
+      <div class="members-grid">
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">X</div>
+          <h4>Xavier King</h4>
+          <p>Business Strategist</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">Y</div>
+          <h4>Yara Scott</h4>
+          <p>Innovation Lead</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">Z</div>
+          <h4>Zack Green</h4>
+          <p>Growth Hacker</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">A2</div>
+          <h4>Aria Adams</h4>
+          <p>Market Analyst</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">B2</div>
+          <h4>Ben Carter</h4>
+          <p>Product Manager</p>
+        </div>
+      </div>
+      <button class="back-btn" data-navigate="homepage">← BACK</button>
+    </section>
+
+    <!-- Design Section -->
+    <section id="design" class="section member-section">
+      <h2 class="member-title">DESIGN DIVISION</h2>
+      <div class="members-grid">
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">C2</div>
+          <h4>Chloe Baker</h4>
+          <p>Creative Director</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">D2</div>
+          <h4>Daniel Moore</h4>
+          <p>UI/UX Designer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">E2</div>
+          <h4>Eva Lewis</h4>
+          <p>Brand Designer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">F2</div>
+          <h4>Felix Walker</h4>
+          <p>Motion Designer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">G2</div>
+          <h4>Gina Young</h4>
+          <p>Graphic Designer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">H2</div>
+          <h4>Hugo Allen</h4>
+          <p>3D Artist</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">I2</div>
+          <h4>Iris Hill</h4>
+          <p>Illustrator</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">J2</div>
+          <h4>Jake Nelson</h4>
+          <p>Web Designer</p>
+        </div>
+        <div class="member-card glass glass-interactive">
+          <div class="member-avatar">K2</div>
+          <h4>Kira Wright</h4>
+          <p>Art Director</p>
+        </div>
+      </div>
+      <button class="back-btn" data-navigate="homepage">← BACK</button>
+    </section>
+
+    <footer class="glass">
+      <p>&copy; 2025 SABA EXPLOIT. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
+```
+
+---
+
+## File: `styles/variables.css`
+```css
+:root {
+  --primary-red: #ff0000;
+  --dark-red: #8b0000;
+  --accent-red: #ff3333;
+  --black: #0a0a0a;
+  --dark-bg: #1a0000;
+  --glass: rgba(255, 0, 0, 0.05);
+  --glass-border: rgba(255, 0, 0, 0.2);
+  --transition-speed: 0.4s;
+  --transition-ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+```
+
+---
+
+## File: `styles/base.css`
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--black);
+  color: white;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(
+      rgba(255, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+}
+
+.orb1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--primary-red), transparent);
+  top: 10%;
+  left: 10%;
+  animation: float1 20s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--dark-red), transparent);
+  bottom: 20%;
+  right: 15%;
+  animation: float2 15s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-80px, -80px);
+  }
+}
+
+/* Logo Intro */
+#logo-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: var(--black);
+}
+
+.intro-logo {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary-red);
+  letter-spacing: 10px;
+  text-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+}
+
+/* Sections */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 15px 35px;
+  cursor: pointer;
+  z-index: 100;
+  font-weight: 600;
+  border: none;
+  background: var(--glass);
+  color: white;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 0, 0, 0.2);
+  border-color: var(--primary-red);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .intro-logo {
+    font-size: 4rem;
+  }
+
+  .back-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+  }
+}
+```
+
+---
+
+## File: `styles/components/glass.css`
+```css
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.glass-interactive {
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.glass-interactive:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: var(--primary-red);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(255, 0, 0, 0.4);
+}
+```
+
+---
+
+## File: `styles/components/header.css`
+```css
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: var(--primary-red);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--primary-red);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+```
+
+---
+
+## File: `styles/components/footer.css`
+```css
+footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: 15px 40px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+```
+
+---
+
+## File: `styles/components/cards.css`
+```css
+.member-card,
+.project-card,
+.division-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.member-card {
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 3px solid var(--primary-red);
+}
+
+.member-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.member-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.project-card {
+  min-width: 450px;
+  flex-shrink: 0;
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.project-card h3 {
+  font-size: 2rem;
+  color: var(--primary-red);
+  margin-bottom: 20px;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid var(--primary-red);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-red);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 350px;
+    padding: 30px;
+  }
+
+  .member-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+}
+```
+
+---
+
+## File: `styles/sections/hero.css`
+```css
+#homepage {
+  display: block;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary-red);
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+```
+
+---
+
+## File: `styles/sections/vam.css`
+```css
+.vam-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 40px;
+  position: relative;
+}
+
+.vam-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  border-radius: 40px;
+  padding: 80px;
+}
+
+.vam-card h2 {
+  font-size: 3rem;
+  color: var(--primary-red);
+  margin-bottom: 30px;
+}
+
+.vam-card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .vam-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .vam-card h2 {
+    font-size: 2rem;
+  }
+}
+```
+
+---
+
+## File: `styles/sections/divisions.css`
+```css
+.division-section {
+  min-height: 100vh;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.division-wrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.division-track {
+  display: flex;
+  gap: 80px;
+  padding: 0 40px;
+  will-change: transform;
+}
+
+.division-item {
+  min-width: 500px;
+  flex-shrink: 0;
+  padding: 60px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.division-item:nth-child(odd) {
+  margin-top: -80px;
+}
+
+.division-item:nth-child(even) {
+  margin-top: 80px;
+}
+
+.division-item h3 {
+  font-size: 2.5rem;
+  color: var(--primary-red);
+  margin-bottom: 20px;
+}
+
+.division-item .count {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.division-item p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .division-item {
+    min-width: 350px;
+  }
+
+  .division-item:nth-child(even) {
+    margin-top: 80px;
+  }
+}
+```
+
+---
+
+## File: `styles/sections/projects.css`
+```css
+.projects-section {
+  min-height: 100vh;
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-title {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--primary-red);
+  margin-bottom: 80px;
+}
+
+.projects-wrapper {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.projects-stack {
+  display: flex;
+  gap: 30px;
+  padding: 0 40px;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2.5rem;
+  }
+}
+```
+
+---
+
+## File: `styles/sections/members.css`
+```css
+.member-section {
+  min-height: 100vh;
+  padding: 120px 40px;
+  overflow-y: auto;
+}
+
+.member-title {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--primary-red);
+  margin-bottom: 60px;
+}
+
+.members-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .member-title {
+    font-size: 2.5rem;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+```
+
+---
+
+## File: `styles/main.css`
+```css
+/* Main styles - imports handled via HTML */
+/* Additional global styles can be added here */
+```
+
+---
+
+## File: `scripts/config/lenis.config.js`
+```javascript
+export const lenisConfig = {
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 2,
+};
+```
+
+---
+
+## File: `scripts/utils/helpers.js`
+```javascript
+export const createRipple = (element, event) => {
+  const ripple = document.createElement('div');
+  const rect = element.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const x = event.clientX - rect.left - size / 2;
+  const y = event.clientY - rect.top - size / 2;
+
+  ripple.style.cssText = `
+    position: absolute;
+    width: ${size}px;
+    height: ${size}px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,0,0,0.4) 0%, transparent 70%);
+    left: ${x}px;
+    top: ${y}px;
+    pointer-events: none;
+    transform: scale(0);
+    z-index: 10;
+  `;
+
+  element.style.position = 'relative';
+  element.style.overflow = 'hidden';
+  element.appendChild(ripple);
+
+  gsap.to(ripple, {
+    scale: 2,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power2.out',
+    onComplete: () => ripple.remove(),
+  });
+};
+
+export const setupParallax = () => {
+  document.addEventListener('mousemove', (e) => {
+    const orb1 = document.querySelector('.orb1');
+    const orb2 = document.querySelector('.orb2');
+
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    gsap.to(orb1, {
+      x: x * 50,
+      y: y * 50,
+      duration: 2,
+      ease: 'power2.out',
+    });
+
+    gsap.to(orb2, {
+      x: x * -30,
+      y: y * -30,
+      duration: 2,
+      ease: 'power2.out',
+    });
+  });
+};
+```
+
+Continue in next message...
+
+---
+
+## File: `scripts/animations/intro.js`
+```javascript
+export const logoIntroAnimation = (onComplete) => {
+  const intro = document.getElementById('logo-intro');
+  const logo = intro.querySelector('.intro-logo');
+  const body = document.body;
+
+  gsap
+    .timeline()
+    .fromTo(
+      logo,
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1, ease: 'power3.out' }
+    )
+    .to(logo, {
+      delay: 1.5,
+      scale: 0.3,
+      y: -300,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.in',
+    })
+    .to(intro, {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        intro.style.display = 'none';
+        body.classList.remove('no-scroll');
+        if (onComplete) onComplete();
+      },
+    });
+};
+```
+
+---
+
+## File: `scripts/animations/scroll.js`
+```javascript
+export const setupScrollAnimations = () => {
+  // Hero section shrink animation
+  gsap.to('.hero-section', {
+    scrollTrigger: {
+      trigger: '.hero-section',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    },
+    scale: 0.7,
+    opacity: 0.3,
+  });
+
+  // VAM section slide up animation
+  gsap.fromTo(
+    '.vam-container',
+    {
+      y: '50vh',
+      borderRadius: '50px',
+      scale: 0.9,
+    },
+    {
+      scrollTrigger: {
+        trigger: '.vam-section',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+      },
+      y: 0,
+      borderRadius: '0px',
+      scale: 1,
+    }
+  );
+
+  // Division horizontal scroll - RIGHT TO LEFT
+  const divisionTrack = document.querySelector('.division-track');
+  const divisionSection = document.querySelector('.division-section');
+  const trackWidth = divisionTrack.scrollWidth;
+
+  gsap.to(divisionTrack, {
+    scrollTrigger: {
+      trigger: divisionSection,
+      start: 'top top',
+      end: () => `+=${trackWidth * 1.5}`,
+      scrub: 1,
+      pin: true,
+    },
+    x: () => -(trackWidth - window.innerWidth + 100),
+    ease: 'none',
+  });
+
+  // Projects horizontal scroll - RIGHT TO LEFT with stacking effect
+  const projectsStack = document.querySelector('.projects-stack');
+  const projectsSection = document.querySelector('.projects-section');
+  const projectCards = document.querySelectorAll('.project-card');
+  const stackWidth = projectsStack.scrollWidth;
+
+  gsap.to(projectsStack, {
+    scrollTrigger: {
+      trigger: projectsSection,
+      start: 'top top',
+      end: () => `+=${stackWidth * 1.5}`,
+      scrub: 1,
+      pin: true,
+    },
+    x: () => -(stackWidth - window.innerWidth + 100),
+    ease: 'none',
+  });
+
+  // Individual card stacking animation
+  projectCards.forEach((card) => {
+    gsap.fromTo(
+      card,
+      {
+        x: 100,
+        opacity: 0.5,
+      },
+      {
+        scrollTrigger: {
+          trigger: projectsSection,
+          start: 'top top',
+          end: () => `+=${stackWidth * 1.5}`,
+          scrub: 1,
+        },
+        x: 0,
+        opacity: 1,
+        ease: 'none',
+      }
+    );
+  });
+};
+```
+
+---
+
+## File: `scripts/animations/glass-effects.js`
+```javascript
+import { createRipple } from '../utils/helpers.js';
+
+export const setupGlassEffects = () => {
+  const cards = document.querySelectorAll('.glass-interactive');
+
+  cards.forEach((card) => {
+    card.addEventListener('mouseenter', function () {
+      gsap.to(this, {
+        scale: 1.05,
+        duration: 0.3,
+        ease: 'power2.out',
+      });
+    });
+
+    card.addEventListener('mouseleave', function () {
+      gsap.to(this, {
+        scale: 1,
+        rotationX: 0,
+        rotationY: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+    });
+
+    card.addEventListener('mousemove', function (e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+
+      gsap.to(this, {
+        rotationX: rotateX,
+        rotationY: rotateY,
+        duration: 0.3,
+        ease: 'power2.out',
+        transformPerspective: 1000,
+      });
+    });
+  });
+
+  // Ripple effect
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.glass-interactive')) {
+      const card = e.target.closest('.glass-interactive');
+      createRipple(card, e);
+    }
+  });
+};
+```
+
+---
+
+## File: `scripts/navigation/router.js`
+```javascript
+import { setupScrollAnimations } from '../animations/scroll.js';
+
+let lenis = null;
+let currentSection = 'homepage';
+let isTransitioning = false;
+
+export const initLenis = (lenisConfig) => {
+  lenis = new Lenis(lenisConfig);
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Connect GSAP ScrollTrigger with Lenis
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+};
+
+export const navigateTo = (sectionId) => {
+  if (isTransitioning || currentSection === sectionId) return;
+  isTransitioning = true;
+
+  const currentEl = document.getElementById(currentSection);
+  const nextEl = document.getElementById(sectionId);
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Close mobile menu
+  hamburger.classList.remove('active');
+  navLinks.classList.remove('active');
+
+  // Destroy current lenis instance and ScrollTrigger
+  if (lenis) {
+    lenis.destroy();
+  }
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+  // Animate transition
+  gsap
+    .timeline()
+    .to(currentEl, {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.5,
+      ease: 'power2.in',
+    })
+    .call(() => {
+      currentEl.classList.remove('active');
+      nextEl.classList.add('active');
+      window.scrollTo(0, 0);
+    })
+    .fromTo(
+      nextEl,
+      { opacity: 0, scale: 1.05 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        onComplete: () => {
+          isTransitioning = false;
+          currentSection = sectionId;
+
+          // Reinit lenis for homepage
+          if (sectionId === 'homepage') {
+            const lenisConfig = {
+              duration: 1.2,
+              easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+              direction: 'vertical',
+              smooth: true,
+              smoothTouch: false,
+              touchMultiplier: 2,
+            };
+            initLenis(lenisConfig);
+            setupScrollAnimations();
+          }
+
+          // Animate cards in new section
+          const cards = nextEl.querySelectorAll('.glass-interactive');
+          gsap.fromTo(
+            cards,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.08,
+              ease: 'power2.out',
+            }
+          );
+        },
+      }
+    );
+};
+
+export const scrollToSection = (section) => {
+  if (currentSection !== 'homepage') {
+    navigateTo('homepage');
+    setTimeout(() => {
+      if (lenis) {
+        lenis.scrollTo(`.${section}-section`, { offset: 0, duration: 1.5 });
+      }
+    }, 1000);
+  } else {
+    if (lenis) {
+      lenis.scrollTo(`.${section}-section`, { offset: 0, duration: 1.5 });
+    }
+  }
+};
+
+export const setupNavigationHandlers = () => {
+  // Navigation links
+  document.querySelectorAll('[data-navigate]').forEach((element) => {
+    element.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = element.getAttribute('data-navigate');
+      navigateTo(target);
+    });
+  });
+
+  // Scroll links
+  document.querySelectorAll('[data-scroll]').forEach((element) => {
+    element.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = element.getAttribute('data-scroll');
+      scrollToSection(target);
+    });
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+
+  // Prevent scroll on member sections
+  document.querySelectorAll('.member-section').forEach((section) => {
+    section.addEventListener('wheel', (e) => {
+      e.stopPropagation();
+    });
+  });
+};
+```
+
+---
+
+## File: `scripts/main.js`
+```javascript
+import { lenisConfig } from './config/lenis.config.js';
+import { logoIntroAnimation } from './animations/intro.js';
+import { setupScrollAnimations } from './animations/scroll.js';
+import { setupGlassEffects } from './animations/glass-effects.js';
+import {
+  initLenis,
+  setupNavigationHandlers,
+} from './navigation/router.js';
+import { setupParallax } from './utils/helpers.js';
+
+// Initialize on load
+window.addEventListener('load', () => {
+  // Start with logo intro animation
+  logoIntroAnimation(() => {
+    // After intro completes, initialize everything
+    initLenis(lenisConfig);
+    setupScrollAnimations();
+    setupGlassEffects();
+    setupNavigationHandlers();
+    setupParallax();
+  });
+});
+```
+
+---
+
+## How to Run the Project
+
+1. **Install dependencies:**
+```bash
+npm install
+```
+
+2. **Run linting:**
+```bash
+npm run lint
+```
+
+3. **Fix linting issues automatically:**
+```bash
+npm run lint:fix
+```
+
+4. **Format all files:**
+```bash
+npm run format
+```
+
+5. **Check formatting without changing files:**
+```bash
+npm run format:check
+```
+
+6. **Run the website:**
+   - Use a local development server like:
+     - VS Code Live Server extension
+     - Python: `python -m http.server 8000`
+     - Node.js: `npx http-server`
+   - Open `index.html` in your browser
+
+---
+
+## Notes
+
+- All JavaScript files use ES6 modules
+- ESLint will check for code quality issues
+- Prettier will format your code consistently
+- The project follows modern best practices
+- All inline event handlers have been converted to event listeners
+- CSS is modular and organized by component/section
+- JavaScript is modular with clear separation of concerns
