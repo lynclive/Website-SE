@@ -30,27 +30,3 @@ export const createRipple = (element, event) => {
     onComplete: () => ripple.remove(),
   });
 };
-
-export const setupParallax = () => {
-  document.addEventListener('mousemove', (e) => {
-    const orb1 = document.querySelector('.orb1');
-    const orb2 = document.querySelector('.orb2');
-
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    gsap.to(orb1, {
-      x: x * 50,
-      y: y * 50,
-      duration: 2,
-      ease: 'power2.out',
-    });
-
-    gsap.to(orb2, {
-      x: x * -30,
-      y: y * -30,
-      duration: 2,
-      ease: 'power2.out',
-    });
-  });
-};

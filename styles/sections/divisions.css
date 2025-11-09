@@ -14,12 +14,13 @@
 
 .division-track {
   display: flex;
-  gap: 60px;
+  gap: 10vw;
   padding: 0 40px;
   padding-left: 40vw; /* Start from 40vw to the right */
   padding-right: 40vw; /* End with 40vw space on the right */
   will-change: transform;
   align-items: flex-start; /* Align to top of container */
+  padding-bottom: 100px;
 }
 
 .division-item {
@@ -38,11 +39,11 @@
 
 /* Zigzag pattern - starting from top */
 .division-item:nth-child(odd) {
-  margin-top: -100px; /* Move up to account for centering */
+  margin-top: -15vh; /* Move up to account for centering */
 }
 
 .division-item:nth-child(even) {
-  margin-top: 100px; /* Move down to create zigzag */
+  margin-top: 5vh; /* Move down to create zigzag */
 }
 
 .division-item h3 {

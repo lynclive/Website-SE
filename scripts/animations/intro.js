@@ -7,12 +7,8 @@ export const logoIntroAnimation = (onComplete) => {
   const footer = document.querySelector('footer');
   const body = document.body;
 
-  // Calculate scrollbar width and add padding to prevent shift
-  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-  
   // Keep scroll disabled during animation
   body.classList.add('no-scroll');
-  body.style.paddingRight = `${scrollbarWidth}px`;
   
   // Hide scrollbar completely during intro
   document.documentElement.style.overflow = 'hidden';
@@ -58,7 +54,6 @@ export const logoIntroAnimation = (onComplete) => {
       onComplete: () => {
         intro.style.display = 'none';
         body.classList.remove('no-scroll');
-        body.style.paddingRight = '';
         document.documentElement.style.overflow = '';
         gsap.set(heroSection, { zIndex: 1 });
       },

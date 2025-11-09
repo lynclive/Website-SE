@@ -16,8 +16,8 @@ export const setupScrollAnimations = () => {
     '.vam-container',
     {
       y: '50vh',
-      borderRadius: '50px',
-      scale: 0.9,
+      borderRadius: '0px',
+      scale: 3,
     },
     {
       scrollTrigger: {
@@ -27,7 +27,7 @@ export const setupScrollAnimations = () => {
         scrub: true,
       },
       y: 0,
-      borderRadius: '0px',
+      borderRadius: '40px',
       scale: 1,
     }
   );
@@ -51,43 +51,103 @@ export const setupScrollAnimations = () => {
     ease: 'none',
   });
 
-  // Projects horizontal scroll - RIGHT TO LEFT with stacking effect
-  const projectsStack = document.querySelector('.projects-stack');
+  // Projects section - Fixed to prevent inline top style
   const projectsSection = document.querySelector('.projects-section');
-  const projectCards = document.querySelectorAll('.project-card');
-  const stackWidth = projectsStack.scrollWidth;
+  const projectsWrapper = document.querySelector('.projects-wrapper');
+  const projectCards = gsap.utils.toArray('.project-card');
+  const totalCards = projectCards.length;
+  const stackOffsetTop = 10;
+  const stackOffsetLeft = 150;
 
-  gsap.to(projectsStack, {
-    scrollTrigger: {
-      trigger: projectsSection,
-      start: 'top top',
-      end: () => `+=${stackWidth * 1.5}`,
-      scrub: 1,
-      pin: true,
-    },
-    x: () => -(stackWidth - window.innerWidth + 100),
-    ease: 'none',
+  // Helper to compute final offsets
+  function finalPos(index) {
+    return {
+      fx: index * stackOffsetLeft,
+      fy: index * stackOffsetTop
+    };
+  }
+
+  // Initialize cards with pure transforms (no top/left)
+  projectCards.forEach((card, index) => {
+    gsap.set(card, {
+      x: 300 + finalPos(index).fx,
+      y: window.innerHeight + finalPos(index).fy,
+      rotation: 8,
+      opacity: 0,
+      zIndex: totalCards + index
+    });
   });
 
-  // Individual card stacking animation
-  projectCards.forEach((card) => {
-    gsap.fromTo(
-      card,
-      {
-        x: 100,
-        opacity: 0.5,
-      },
-      {
-        scrollTrigger: {
-          trigger: projectsSection,
-          start: 'top top',
-          end: () => `+=${stackWidth * 1.5}`,
-          scrub: 1,
-        },
-        x: 0,
-        opacity: 1,
-        ease: 'none',
+  // Create ScrollTrigger - let it do its thing naturally
+  ScrollTrigger.create({
+    trigger: projectsSection,
+    start: 'top top',
+    end: () => `+=${window.innerHeight * totalCards}`,
+    pin: projectsWrapper,
+    pinSpacing: true,
+    scrub: 2,
+    onUpdate: (self) => {
+      const progress = self.progress;
+
+      projectCards.forEach((card, index) => {
+        const { fx, fy } = finalPos(index);
+        const cardStart = index / totalCards;
+        const cardEnd = (index + 1) / totalCards;
+
+        if (progress >= cardStart && progress <= cardEnd) {
+          const cardProgress = (progress - cardStart) / (cardEnd - cardStart);
+          const eased = cardProgress < 0.5
+            ? 2 * cardProgress * cardProgress
+            : 1 - Math.pow(-2 * cardProgress + 2, 2) / 2;
+
+          gsap.set(card, {
+            x: 300 * (1 - eased) + fx,
+            y: window.innerHeight * (1 - eased) + fy,
+            rotation: 8 * (1 - eased),
+            opacity: eased,
+            scale: 1
+          });
+        } else if (progress > cardEnd) {
+          gsap.set(card, {
+            x: fx,
+            y: fy,
+            rotation: 0,
+            opacity: 1,
+            scale: 1
+          });
+        } else {
+          gsap.set(card, {
+            x: 300 + fx,
+            y: window.innerHeight + fy,
+            rotation: 8,
+            opacity: 0
+          });
+        }
+      });
+
+      if (progress >= 1) {
+        projectCards.forEach((card, index) => {
+          const { fx, fy } = finalPos(index);
+          gsap.set(card, { x: fx, y: fy, rotation: 0, opacity: 1 });
+        });
       }
-    );
+    }
+  });
+
+  // Prevent inline top style on refresh
+  ScrollTrigger.addEventListener("refreshInit", () => {
+    gsap.set(".project-card", { 
+      top: 0,
+      clearProps: 'top'
+    });
+  });
+
+  // Refresh on load and resize
+  window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+  });
+
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
   });
 };

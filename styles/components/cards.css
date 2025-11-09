@@ -9,6 +9,8 @@
   padding: 40px 30px;
   text-align: center;
   border-radius: 25px;
+  width: 300px;
+  height: 350px;
 }
 
 .member-avatar {
@@ -36,39 +38,93 @@
 }
 
 .project-card {
-  min-width: 450px;
+  width: 300px;
+  height: 400px;
   flex-shrink: 0;
-  padding: 50px;
+  padding: 0;
   border-radius: 30px;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  /* Performance optimizations */
+  will-change: transform, z-index;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.project-card::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 0, 0, 0.15);
+  line-height: 1;
+  z-index: 1;
+}
+
+.project-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.8) 50%,
+    transparent 100%
+  );
+  z-index: 2;
 }
 
 .project-card h3 {
-  font-size: 2rem;
-  color: var(--primary-red);
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .project-card p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .project-tag {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 6px 16px;
   background: rgba(255, 0, 0, 0.2);
   border: 1px solid var(--primary-red);
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--primary-red);
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
   .project-card {
-    min-width: 350px;
-    padding: 30px;
+    width: 280px;
+    height: 380px;
+    top: 80px;
+  }
+
+  .project-card::before {
+    font-size: 4rem;
+    top: 25px;
+    left: 25px;
+  }
+
+  .project-card-content {
+    padding: 25px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
   }
 
   .member-avatar {

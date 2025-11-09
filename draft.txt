@@ -149,49 +149,23 @@ build/
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SABA EXPLOIT | Innovation & Excellence</title>
-    <meta
-      name="description"
-      content="SABA EXPLOIT - SMAN 1 Bantul's technology and creative organization specializing in programming, cinematography, photography, technopreneurship, and design."
-    />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/variables.css" />
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/components/glass.css" />
-    <link rel="stylesheet" href="styles/components/header.css" />
-    <link rel="stylesheet" href="styles/components/footer.css" />
-    <link rel="stylesheet" href="styles/components/cards.css" />
-    <link rel="stylesheet" href="styles/sections/hero.css" />
-    <link rel="stylesheet" href="styles/sections/vam.css" />
-    <link rel="stylesheet" href="styles/sections/divisions.css" />
-    <link rel="stylesheet" href="styles/sections/projects.css" />
-    <link rel="stylesheet" href="styles/sections/members.css" />
     <link rel="stylesheet" href="styles/main.css" />
-
-    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script type="module" src="scripts/main.js"></script>
   </head>
-  <body class="no-scroll">
-    <!-- Animated Background -->
-    <div class="bg-animation">
-      <div class="bg-grid"></div>
-      <div class="bg-orb orb1"></div>
-      <div class="bg-orb orb2"></div>
-    </div>
+  <body class="homepage no-scroll">
+    <div class="bg-animation" id="vanta-bg"></div>
+    <div id="logo-intro"></div>
 
-    <!-- Logo Intro -->
-    <div id="logo-intro">
-      <h1 class="intro-logo">SABA EXPLOIT</h1>
-    </div>
-
-    <!-- Header -->
     <header class="glass">
       <nav>
         <div class="logo">SABA EXPLOIT</div>
         <ul class="nav-links">
-          <li><a data-navigate="homepage">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a data-scroll="vam">Vision & Mission</a></li>
           <li><a data-scroll="projects">Projects</a></li>
         </ul>
@@ -203,392 +177,173 @@ build/
       </nav>
     </header>
 
-    <!-- Homepage Section -->
-    <section id="homepage" class="section active">
-      <!-- Hero -->
-      <div class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-title">SABA EXPLOIT</h1>
-          <p class="hero-subtitle">WHERE INNOVATION MEETS EXCELLENCE</p>
+    <!-- Hero -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">SABA EXPLOIT</h1>
+        <p class="hero-subtitle">SABA CYBER COMMUNITY</p>
+      </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="vam-section">
+      <div class="vam-container glass">
+        <div class="vam-card">
+          <h2>VISION</h2>
+          <p>
+            To be the leading creative technology studio that transforms
+            innovative ideas into extraordinary digital experiences, pushing
+            the boundaries of what's possible in the intersection of art and
+            technology.
+          </p>
+        </div>
+        <div class="vam-card">
+          <h2>MISSION</h2>
+          <p>
+            We empower businesses and individuals through cutting-edge
+            technology solutions, stunning visual storytelling, and innovative
+            design thinking. Our mission is to deliver excellence in every
+            project.
+          </p>
         </div>
       </div>
+    </div>
 
-      <!-- Vision & Mission -->
-      <div class="vam-section">
-        <div class="vam-container glass">
-          <div class="vam-card">
-            <h2>VISION</h2>
-            <p>
-              To be the leading creative technology studio that transforms
-              innovative ideas into extraordinary digital experiences, pushing
-              the boundaries of what's possible in the intersection of art and
-              technology.
-            </p>
-          </div>
-          <div class="vam-card">
-            <h2>MISSION</h2>
-            <p>
-              We empower businesses and individuals through cutting-edge
-              technology solutions, stunning visual storytelling, and innovative
-              design thinking. Our mission is to deliver excellence in every
-              project.
-            </p>
-          </div>
+    <!-- Divisions -->
+    <div class="division-section">
+      <div class="division-wrapper">
+        <div class="division-track">
+          <a href="programming.html" class="division-item glass glass-interactive">
+            <div class="count">8</div>
+            <h3>PROGRAMMING</h3>
+            <p>Expert developers crafting cutting-edge software solutions and innovative applications.</p>
+          </a>
+          <a href="cinematography.html" class="division-item glass glass-interactive">
+            <div class="count">6</div>
+            <h3>CINEMATOGRAPHY</h3>
+            <p>Visual storytellers capturing moments with cinematic excellence and creative vision.</p>
+          </a>
+          <a href="photography.html" class="division-item glass glass-interactive">
+            <div class="count">9</div>
+            <h3>PHOTOGRAPHY</h3>
+            <p>Professional photographers creating stunning imagery that tells compelling stories.</p>
+          </a>
+          <a href="technopreneurship.html" class="division-item glass glass-interactive">
+            <div class="count">5</div>
+            <h3>TECHNOPRENEURSHIP</h3>
+            <p>Business innovators driving growth through strategic thinking and market expertise.</p>
+          </a>
+          <a href="design.html" class="division-item glass glass-interactive">
+            <div class="count">9</div>
+            <h3>DESIGN</h3>
+            <p>Creative designers building beautiful and functional user experiences.</p>
+          </a>
         </div>
       </div>
+    </div>
 
-      <!-- Divisions -->
-      <div class="division-section">
-        <div class="division-wrapper">
-          <div class="division-track">
-            <div
-              class="division-item glass glass-interactive"
-              data-navigate="programming"
-            >
-              <div class="count">8</div>
-              <h3>PROGRAMMING</h3>
-              <p>
-                Expert developers crafting cutting-edge software solutions and
-                innovative applications.
-              </p>
-            </div>
-            <div
-              class="division-item glass glass-interactive"
-              data-navigate="cinematography"
-            >
-              <div class="count">6</div>
-              <h3>CINEMATOGRAPHY</h3>
-              <p>
-                Visual storytellers capturing moments with cinematic excellence
-                and creative vision.
-              </p>
-            </div>
-            <div
-              class="division-item glass glass-interactive"
-              data-navigate="photography"
-            >
-              <div class="count">9</div>
-              <h3>PHOTOGRAPHY</h3>
-              <p>
-                Professional photographers creating stunning imagery that tells
-                compelling stories.
-              </p>
-            </div>
-            <div
-              class="division-item glass glass-interactive"
-              data-navigate="technopreneurship"
-            >
-              <div class="count">5</div>
-              <h3>TECHNOPRENEURSHIP</h3>
-              <p>
-                Business innovators driving growth through strategic thinking
-                and market expertise.
-              </p>
-            </div>
-            <div
-              class="division-item glass glass-interactive"
-              data-navigate="design"
-            >
-              <div class="count">9</div>
-              <h3>DESIGN</h3>
-              <p>
-                Creative designers building beautiful and functional user
-                experiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects -->
-      <div class="projects-section">
-        <h2 class="projects-title">OUR WORKS</h2>
-        <div class="projects-wrapper">
-          <div class="projects-stack">
-            <div class="project-card glass glass-interactive">
+    <!-- Projects -->
+    <div class="projects-section">
+      <h2 class="projects-title">OUR WORKS</h2>
+      <div class="projects-wrapper">
+        <div class="projects-stack">
+          <div class="project-card glass glass-interactive" data-number="01">
+            <div class="project-card-content">
               <h3>AI-Powered Analytics Platform</h3>
-              <p>
-                Advanced machine learning platform providing real-time data
-                insights and predictive analytics for enterprise clients.
-              </p>
+              <p>Advanced machine learning platform providing real-time data insights and predictive analytics for enterprise clients.</p>
               <span class="project-tag">PROGRAMMING</span>
             </div>
-            <div class="project-card glass glass-interactive">
+          </div>
+          <div class="project-card glass glass-interactive" data-number="02">
+            <div class="project-card-content">
               <h3>Brand Documentary Series</h3>
-              <p>
-                Cinematic storytelling for Fortune 500 companies, capturing
-                their journey, vision, and impact on the industry.
-              </p>
+              <p>Cinematic storytelling for Fortune 500 companies, capturing their journey, vision, and impact on the industry.</p>
               <span class="project-tag">CINEMATOGRAPHY</span>
             </div>
-            <div class="project-card glass glass-interactive">
+          </div>
+          <div class="project-card glass glass-interactive" data-number="03">
+            <div class="project-card-content">
               <h3>Fashion Campaign 2024</h3>
-              <p>
-                High-end fashion photography for international luxury brands and
-                premier fashion magazines.
-              </p>
+              <p>High-end fashion photography for international luxury brands and premier fashion magazines.</p>
               <span class="project-tag">PHOTOGRAPHY</span>
             </div>
-            <div class="project-card glass glass-interactive">
+          </div>
+          <div class="project-card glass glass-interactive" data-number="04">
+            <div class="project-card-content">
               <h3>E-Commerce Marketplace</h3>
-              <p>
-                Full-stack marketplace solution with integrated payment systems
-                and advanced logistics management.
-              </p>
+              <p>Full-stack marketplace solution with integrated payment systems and advanced logistics management.</p>
               <span class="project-tag">PROGRAMMING</span>
             </div>
-            <div class="project-card glass glass-interactive">
+          </div>
+          <div class="project-card glass glass-interactive" data-number="05">
+            <div class="project-card-content">
               <h3>Startup Incubator Program</h3>
-              <p>
-                Business acceleration program helping tech startups scale from
-                initial concept to market success.
-              </p>
+              <p>Business acceleration program helping tech startups scale from initial concept to market success.</p>
               <span class="project-tag">TECHNOPRENEURSHIP</span>
             </div>
-            <div class="project-card glass glass-interactive">
+          </div>
+          <div class="project-card glass glass-interactive" data-number="06">
+            <div class="project-card-content">
               <h3>Complete Brand Transformation</h3>
-              <p>
-                End-to-end rebranding including logo design, identity system,
-                and comprehensive digital presence.
-              </p>
+              <p>End-to-end rebranding including logo design, identity system, and comprehensive digital presence.</p>
               <span class="project-tag">DESIGN</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Programming Section -->
-    <section id="programming" class="section member-section">
-      <h2 class="member-title">PROGRAMMING DIVISION</h2>
-      <div class="members-grid">
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">A</div>
-          <h4>Ahmad Nur Taufiq</h4>
-          <p>Lead Developer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">B</div>
-          <h4>Alyana Diah Ramadhani Pramono</h4>
-          <p>Full Stack Developer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">C</div>
-          <h4>Kennydia Fatharani</h4>
-          <p>Backend Engineer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">D</div>
-          <h4>Ronny Kuncoro Jati</h4>
-          <p>Frontend Developer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">E</div>
-          <h4>Agung Rezkiana Putra</h4>
-          <p>DevOps Engineer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">F</div>
-          <h4>Saputro Aji Wicaksono</h4>
-          <p>Mobile Developer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">G</div>
-          <h4>Fauzan Arif Aldiano</h4>
-          <p>Software Architect</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">H</div>
-          <h4>Isyana Latifah </h4>
-          <p>AI Engineer</p>
-        </div>
-      </div>
-      <button class="back-btn" data-navigate="homepage">← BACK</button>
-    </section>
-
-    <!-- Cinematography Section -->
-    <section id="cinematography" class="section member-section">
-      <h2 class="member-title">CINEMATOGRAPHY DIVISION</h2>
-      <div class="members-grid">
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">I</div>
-          <h4>Alif Rohman Ananto</h4>
-          <p>Director of Photography</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">J</div>
-          <h4>Muhammad Fawwaz Elhakim</h4>
-          <p>Camera Operator</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">K</div>
-          <h4>Yashinta Ledy Kristi</h4>
-          <p>Video Editor</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">L</div>
-          <h4>Erina Tyas Salsabila</h4>
-          <p>Drone Pilot</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">M</div>
-          <h4>Jaasmine Aisha Azzura</h4>
-          <p>Color Grader</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">N</div>
-          <h4>Restu Faiza Purnomo </h4>
-          <p>Sound Designer</p>
-        </div>
-      </div>
-      <button class="back-btn" data-navigate="homepage">← BACK</button>
-    </section>
-
-    <!-- Photography Section -->
-    <section id="photography" class="section member-section">
-      <h2 class="member-title">PHOTOGRAPHY DIVISION</h2>
-      <div class="members-grid">
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">O</div>
-          <h4>Muhammad Fathurrahman Najib</h4>
-          <p>Lead Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">P</div>
-          <h4>Muhammad Arfan Aliy</h4>
-          <p>Portrait Specialist</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">Q</div>
-          <h4>Arshavina Maulida</h4>
-          <p>Product Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">R</div>
-          <h4>Verena Orris Eggnis Deo</h4>
-          <p>Event Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">S</div>
-          <h4>Sam Rodriguez</h4>
-          <p>Lifestyle Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">T</div>
-          <h4>Tara Lee</h4>
-          <p>Fashion Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">U</div>
-          <h4>Uma Patel</h4>
-          <p>Photo Editor</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">V</div>
-          <h4>Victor White</h4>
-          <p>Commercial Photographer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">W</div>
-          <h4>Wendy Hall</h4>
-          <p>Studio Manager</p>
-        </div>
-      </div>
-      <button class="back-btn" data-navigate="homepage">← BACK</button>
-    </section>
-
-    <!-- Technopreneurship Section -->
-    <section id="technopreneurship" class="section member-section">
-      <h2 class="member-title">TECHNOPRENEURSHIP DIVISION</h2>
-      <div class="members-grid">
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">X</div>
-          <h4>Xavier King</h4>
-          <p>Business Strategist</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">Y</div>
-          <h4>Yara Scott</h4>
-          <p>Innovation Lead</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">Z</div>
-          <h4>Zack Green</h4>
-          <p>Growth Hacker</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">A2</div>
-          <h4>Aria Adams</h4>
-          <p>Market Analyst</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">B2</div>
-          <h4>Ben Carter</h4>
-          <p>Product Manager</p>
-        </div>
-      </div>
-      <button class="back-btn" data-navigate="homepage">← BACK</button>
-    </section>
-
-    <!-- Design Section -->
-    <section id="design" class="section member-section">
-      <h2 class="member-title">DESIGN DIVISION</h2>
-      <div class="members-grid">
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">C2</div>
-          <h4>Chloe Baker</h4>
-          <p>Creative Director</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">D2</div>
-          <h4>Daniel Moore</h4>
-          <p>UI/UX Designer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">E2</div>
-          <h4>Eva Lewis</h4>
-          <p>Brand Designer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">F2</div>
-          <h4>Felix Walker</h4>
-          <p>Motion Designer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">G2</div>
-          <h4>Gina Young</h4>
-          <p>Graphic Designer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">H2</div>
-          <h4>Hugo Allen</h4>
-          <p>3D Artist</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">I2</div>
-          <h4>Iris Hill</h4>
-          <p>Illustrator</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">J2</div>
-          <h4>Jake Nelson</h4>
-          <p>Web Designer</p>
-        </div>
-        <div class="member-card glass glass-interactive">
-          <div class="member-avatar">K2</div>
-          <h4>Kira Wright</h4>
-          <p>Art Director</p>
-        </div>
-      </div>
-      <button class="back-btn" data-navigate="homepage">← BACK</button>
-    </section>
+    </div>
 
     <footer class="glass">
       <p>&copy; 2025 SABA EXPLOIT. All Rights Reserved.</p>
     </footer>
+  </body>
+</html>
+```
 
-    <!-- JavaScript Modules -->
-    <script type="module" src="scripts/main.js"></script>
+---
+
+## File: `html template, e.g., programming.html.`
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Division | SABA EXPLOIT</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="scripts/member-page.js"></script>
+  </head>
+  <body>
+    <div class="bg-animation" id="vanta-bg"></div>
+
+    <header class="glass">
+      <nav>
+        <div class="logo">SABA EXPLOIT</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#vam">Vision & Mission</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="member-section">
+      <h2 class="member-title" id="division-title">LOADING...</h2>
+      <div class="members-grid" id="members-container"></div>
+      <a href="index.html" class="back-btn">← BACK</a>
+    </div>
+
+    <footer class="glass">
+      <p>&copy; 2025 SABA EXPLOIT. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
 ```
@@ -620,11 +375,18 @@ build/
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--black);
   color: white;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body.no-scroll {
@@ -642,70 +404,36 @@ body.no-scroll {
   overflow: hidden;
 }
 
-.bg-grid {
+/* Subtle red glow overlay to enhance NET effect */
+.bg-animation::after {
+  content: '';
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image: linear-gradient(
-      rgba(255, 0, 0, 0.1) 1px,
-      transparent 1px
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      ellipse at 20% 30%,
+      rgba(255, 0, 0, 0.1) 0%,
+      transparent 50%
     ),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 20s linear infinite;
+    radial-gradient(
+      ellipse at 80% 70%,
+      rgba(139, 0, 0, 0.08) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 1;
+  animation: netGlow 12s ease-in-out infinite alternate;
 }
 
-@keyframes gridMove {
+@keyframes netGlow {
   0% {
-    transform: translate(0, 0);
+    opacity: 0.4;
   }
   100% {
-    transform: translate(50px, 50px);
-  }
-}
-
-.bg-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.3;
-}
-
-.orb1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--primary-red), transparent);
-  top: 10%;
-  left: 10%;
-  animation: float1 20s ease-in-out infinite;
-}
-
-.orb2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--dark-red), transparent);
-  bottom: 20%;
-  right: 15%;
-  animation: float2 15s ease-in-out infinite;
-}
-
-@keyframes float1 {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(100px, 100px);
-  }
-}
-
-@keyframes float2 {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-80px, -80px);
+    opacity: 0.7;
   }
 }
 
@@ -716,31 +444,27 @@ body.no-scroll {
   left: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 9999;
   background: var(--black);
+  pointer-events: none;
 }
 
-.intro-logo {
-  font-size: 8rem;
-  font-weight: 900;
-  color: var(--primary-red);
-  letter-spacing: 10px;
-  text-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+/* Enable scrolling on homepage only */
+body.homepage {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* Sections */
-.section {
-  position: relative;
+/* Member pages */
+.member-section {
   width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
-  display: none;
-}
-
-.section.active {
-  display: block;
+  overflow-x: hidden;
+  padding: 140px 40px 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .back-btn {
@@ -754,6 +478,8 @@ body.no-scroll {
   border: none;
   background: var(--glass);
   color: white;
+  text-decoration: none;
+  display: inline-block;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
@@ -769,8 +495,8 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
-  .intro-logo {
-    font-size: 4rem;
+  .member-section {
+    padding: 120px 20px 80px 20px;
   }
 
   .back-btn {
@@ -945,6 +671,8 @@ footer p {
   padding: 40px 30px;
   text-align: center;
   border-radius: 25px;
+  width: 300px;
+  height: 350px;
 }
 
 .member-avatar {
@@ -972,39 +700,93 @@ footer p {
 }
 
 .project-card {
-  min-width: 450px;
+  width: 300px;
+  height: 400px;
   flex-shrink: 0;
-  padding: 50px;
+  padding: 0;
   border-radius: 30px;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  /* Performance optimizations */
+  will-change: transform, z-index;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.project-card::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 0, 0, 0.15);
+  line-height: 1;
+  z-index: 1;
+}
+
+.project-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.8) 50%,
+    transparent 100%
+  );
+  z-index: 2;
 }
 
 .project-card h3 {
-  font-size: 2rem;
-  color: var(--primary-red);
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .project-card p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .project-tag {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 6px 16px;
   background: rgba(255, 0, 0, 0.2);
   border: 1px solid var(--primary-red);
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--primary-red);
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
   .project-card {
-    min-width: 350px;
-    padding: 30px;
+    width: 280px;
+    height: 380px;
+    top: 80px;
+  }
+
+  .project-card::before {
+    font-size: 4rem;
+    top: 25px;
+    left: 25px;
+  }
+
+  .project-card-content {
+    padding: 25px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
   }
 
   .member-avatar {
@@ -1046,7 +828,8 @@ footer p {
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
+  font-weight: 500;
+  font-size: 2rem;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 3px;
 }
@@ -1081,7 +864,6 @@ footer p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  border-radius: 40px;
   padding: 80px;
 }
 
@@ -1130,49 +912,79 @@ footer p {
 
 .division-track {
   display: flex;
-  gap: 80px;
+  gap: 10vw;
   padding: 0 40px;
+  padding-left: 40vw; /* Start from 40vw to the right */
+  padding-right: 40vw; /* End with 40vw space on the right */
   will-change: transform;
+  align-items: flex-start; /* Align to top of container */
+  padding-bottom: 100px;
 }
 
 .division-item {
-  min-width: 500px;
+  width: 300px;
+  height: 300px;
   flex-shrink: 0;
-  padding: 60px 40px;
+  padding: 30px;
   border-radius: 30px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Zigzag pattern - starting from top */
 .division-item:nth-child(odd) {
-  margin-top: -80px;
+  margin-top: -15vh; /* Move up to account for centering */
 }
 
 .division-item:nth-child(even) {
-  margin-top: 80px;
+  margin-top: 5vh; /* Move down to create zigzag */
 }
 
 .division-item h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--primary-red);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .division-item .count {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .division-item p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
   .division-item {
-    min-width: 350px;
+    width: 280px;
+    height: 280px;
+    padding: 25px;
+  }
+
+  .division-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .division-item .count {
+    font-size: 2.5rem;
+  }
+
+  .division-item p {
+    font-size: 0.85rem;
+  }
+
+  .division-item:nth-child(odd) {
+    margin-top: -80px;
   }
 
   .division-item:nth-child(even) {
@@ -1187,9 +999,8 @@ footer p {
 ```css
 .projects-section {
   min-height: 100vh;
-  padding: 100px 40px;
+  padding: 100px 0;
   position: relative;
-  overflow: hidden;
 }
 
 .projects-title {
@@ -1197,26 +1008,58 @@ footer p {
   text-align: center;
   color: var(--primary-red);
   margin-bottom: 80px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
 }
 
 .projects-wrapper {
   position: relative;
-  height: 80vh;
+  top: -270px;
+  height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  padding-left: 100px;
+  overflow: visible;
 }
 
 .projects-stack {
-  display: flex;
-  gap: 30px;
-  padding: 0 40px;
-  will-change: transform;
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.project-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  will-change: transform, opacity;
 }
 
 @media (max-width: 768px) {
+  .projects-section {
+    min-height: 100vh;
+  }
+
   .projects-title {
     font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+
+  .projects-wrapper {
+    top: -220px;
+  }
+
+  .projects-wrapper {
+    padding-left: 40px;
+  }
+
+  .projects-stack {
+    width: 280px;
+    height: 380px;
   }
 }
 ```
@@ -1225,34 +1068,34 @@ footer p {
 
 ## File: `styles/sections/members.css`
 ```css
-.member-section {
-  min-height: 100vh;
-  padding: 120px 40px;
-  overflow-y: auto;
-}
-
 .member-title {
   font-size: 4rem;
   text-align: center;
   color: var(--primary-red);
   margin-bottom: 60px;
+  flex-shrink: 0;
+  width: 100%;
 }
 
 .members-grid {
   max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 60px;
+  justify-content: center;
+  justify-items: center;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 768px) {
   .member-title {
     font-size: 2.5rem;
+    margin-bottom: 40px;
   }
 
   .members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
 }
@@ -1262,8 +1105,22 @@ footer p {
 
 ## File: `styles/main.css`
 ```css
-/* Main styles - imports handled via HTML */
-/* Additional global styles can be added here */
+/* 1. Variables & Base */
+@import url('variables.css');
+@import url('base.css');
+
+/* 2. Components */
+@import url('components/glass.css');
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/cards.css');
+
+/* 3. Sections */
+@import url('sections/hero.css');
+@import url('sections/vam.css');
+@import url('sections/divisions.css');
+@import url('sections/projects.css');
+@import url('sections/members.css')
 ```
 
 ---
@@ -1279,6 +1136,35 @@ export const lenisConfig = {
   touchMultiplier: 2,
 };
 ```
+
+---
+
+## File: `scripts/config/vanta.config.js`
+```javascript
+export const vantaConfig = {
+  el: '#vanta-bg',
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  
+  // Red theme colors
+  color: 0xff0000, // Primary red (#ff0000)
+  backgroundColor: 0x0a0a0a, // Deep black (#0a0a0a)
+  
+  // Net effect settings
+  points: 10.0, // Number of connection points
+  maxDistance: 25.0, // Maximum distance for connections
+  spacing: 18.0, // Spacing between points
+  showDots: true, // Show the nodes
+
+  forceAnimate: false,
+  fps: 30, // Limit frame rate if supported
+};
+---
 
 ---
 
@@ -1316,30 +1202,6 @@ export const createRipple = (element, event) => {
     onComplete: () => ripple.remove(),
   });
 };
-
-export const setupParallax = () => {
-  document.addEventListener('mousemove', (e) => {
-    const orb1 = document.querySelector('.orb1');
-    const orb2 = document.querySelector('.orb2');
-
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    gsap.to(orb1, {
-      x: x * 50,
-      y: y * 50,
-      duration: 2,
-      ease: 'power2.out',
-    });
-
-    gsap.to(orb2, {
-      x: x * -30,
-      y: y * -30,
-      duration: 2,
-      ease: 'power2.out',
-    });
-  });
-};
 ```
 
 Continue in next message...
@@ -1350,33 +1212,105 @@ Continue in next message...
 ```javascript
 export const logoIntroAnimation = (onComplete) => {
   const intro = document.getElementById('logo-intro');
-  const logo = intro.querySelector('.intro-logo');
+  const heroSection = document.querySelector('.hero-section');
+  const heroTitle = document.querySelector('.hero-title');
+  const heroSubtitle = document.querySelector('.hero-subtitle');
+  const header = document.querySelector('header');
+  const footer = document.querySelector('footer');
   const body = document.body;
+
+  // Calculate scrollbar width and add padding to prevent shift
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  
+  // Keep scroll disabled during animation
+  body.classList.add('no-scroll');
+  body.style.paddingRight = `${scrollbarWidth}px`;
+  
+  // Hide scrollbar completely during intro
+  document.documentElement.style.overflow = 'hidden';
+
+  // Make hero section visible during intro
+  gsap.set(heroSection, { zIndex: 10000 });
+  
+  // Set initial states
+  gsap.set(heroTitle, {
+    y: window.innerHeight,
+    scale: 0,
+    opacity: 0,
+  });
+  gsap.set(heroSubtitle, { opacity: 0, y: 30 });
+  gsap.set(header, { y: -100, opacity: 0 });
+  gsap.set(footer, { y: 100, opacity: 0 });
 
   gsap
     .timeline()
-    .fromTo(
-      logo,
-      { scale: 0, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1, ease: 'power3.out' }
-    )
-    .to(logo, {
-      delay: 1.5,
-      scale: 0.3,
-      y: -300,
-      opacity: 0,
-      duration: 1,
-      ease: 'power2.in',
+    // Animate hero title from bottom - scale up to 1.5x
+    .to(heroTitle, {
+      y: 0,
+      scale: 1.5,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power3.out',
     })
+    // Hold at larger size
+    .to(heroTitle, {
+      delay: 0.6,
+      duration: 0.2,
+    })
+    // Scale down to fit as hero title
+    .to(heroTitle, {
+      scale: 1,
+      duration: 0.6,
+      ease: 'power2.inOut',
+    })
+    // Fade out intro overlay
     .to(intro, {
       opacity: 0,
       duration: 0.5,
       onComplete: () => {
         intro.style.display = 'none';
         body.classList.remove('no-scroll');
-        if (onComplete) onComplete();
+        body.style.paddingRight = '';
+        document.documentElement.style.overflow = '';
+        gsap.set(heroSection, { zIndex: 1 });
       },
-    });
+    })
+    // Animate subtitle
+    .to(
+      heroSubtitle,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+      },
+      '-=0.3'
+    )
+    // Slide in header from top
+    .to(
+      header,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+      },
+      '-=0.4'
+    )
+    // Slide in footer from bottom
+    .to(
+      footer,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        onComplete: () => {
+          if (onComplete) onComplete();
+        },
+      },
+      '-=0.5'
+    );
 };
 ```
 
@@ -1422,57 +1356,119 @@ export const setupScrollAnimations = () => {
   const divisionTrack = document.querySelector('.division-track');
   const divisionSection = document.querySelector('.division-section');
   const trackWidth = divisionTrack.scrollWidth;
+  const viewportWidth = window.innerWidth;
 
   gsap.to(divisionTrack, {
     scrollTrigger: {
       trigger: divisionSection,
       start: 'top top',
-      end: () => `+=${trackWidth * 1.5}`,
+      end: () => `+=${trackWidth}`,
       scrub: 1,
       pin: true,
+      anticipatePin: 1,
     },
-    x: () => -(trackWidth - window.innerWidth + 100),
+    x: () => -(trackWidth - viewportWidth),
     ease: 'none',
   });
 
-  // Projects horizontal scroll - RIGHT TO LEFT with stacking effect
-  const projectsStack = document.querySelector('.projects-stack');
+  // Projects section - Fixed to prevent inline top style
   const projectsSection = document.querySelector('.projects-section');
-  const projectCards = document.querySelectorAll('.project-card');
-  const stackWidth = projectsStack.scrollWidth;
+  const projectsWrapper = document.querySelector('.projects-wrapper');
+  const projectCards = gsap.utils.toArray('.project-card');
+  const totalCards = projectCards.length;
+  const stackOffsetTop = 10;
+  const stackOffsetLeft = 150;
 
-  gsap.to(projectsStack, {
-    scrollTrigger: {
-      trigger: projectsSection,
-      start: 'top top',
-      end: () => `+=${stackWidth * 1.5}`,
-      scrub: 1,
-      pin: true,
-    },
-    x: () => -(stackWidth - window.innerWidth + 100),
-    ease: 'none',
+  // Helper to compute final offsets
+  function finalPos(index) {
+    return {
+      fx: index * stackOffsetLeft,
+      fy: index * stackOffsetTop
+    };
+  }
+
+  // Initialize cards with pure transforms (no top/left)
+  projectCards.forEach((card, index) => {
+    gsap.set(card, {
+      x: 300 + finalPos(index).fx,
+      y: window.innerHeight + finalPos(index).fy,
+      rotation: 8,
+      opacity: 0,
+      zIndex: totalCards + index
+    });
   });
 
-  // Individual card stacking animation
-  projectCards.forEach((card) => {
-    gsap.fromTo(
-      card,
-      {
-        x: 100,
-        opacity: 0.5,
-      },
-      {
-        scrollTrigger: {
-          trigger: projectsSection,
-          start: 'top top',
-          end: () => `+=${stackWidth * 1.5}`,
-          scrub: 1,
-        },
-        x: 0,
-        opacity: 1,
-        ease: 'none',
+  // Create ScrollTrigger - let it do its thing naturally
+  ScrollTrigger.create({
+    trigger: projectsSection,
+    start: 'top top',
+    end: () => `+=${window.innerHeight * totalCards}`,
+    pin: projectsWrapper,
+    pinSpacing: true,
+    scrub: 2,
+    onUpdate: (self) => {
+      const progress = self.progress;
+
+      projectCards.forEach((card, index) => {
+        const { fx, fy } = finalPos(index);
+        const cardStart = index / totalCards;
+        const cardEnd = (index + 1) / totalCards;
+
+        if (progress >= cardStart && progress <= cardEnd) {
+          const cardProgress = (progress - cardStart) / (cardEnd - cardStart);
+          const eased = cardProgress < 0.5
+            ? 2 * cardProgress * cardProgress
+            : 1 - Math.pow(-2 * cardProgress + 2, 2) / 2;
+
+          gsap.set(card, {
+            x: 300 * (1 - eased) + fx,
+            y: window.innerHeight * (1 - eased) + fy,
+            rotation: 8 * (1 - eased),
+            opacity: eased,
+            scale: 1
+          });
+        } else if (progress > cardEnd) {
+          gsap.set(card, {
+            x: fx,
+            y: fy,
+            rotation: 0,
+            opacity: 1,
+            scale: 1
+          });
+        } else {
+          gsap.set(card, {
+            x: 300 + fx,
+            y: window.innerHeight + fy,
+            rotation: 8,
+            opacity: 0
+          });
+        }
+      });
+
+      if (progress >= 1) {
+        projectCards.forEach((card, index) => {
+          const { fx, fy } = finalPos(index);
+          gsap.set(card, { x: fx, y: fy, rotation: 0, opacity: 1 });
+        });
       }
-    );
+    }
+  });
+
+  // Prevent inline top style on refresh
+  ScrollTrigger.addEventListener("refreshInit", () => {
+    gsap.set(".project-card", { 
+      top: 0,
+      clearProps: 'top'
+    });
+  });
+
+  // Refresh on load and resize
+  window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+  });
+
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
   });
 };
 ```
@@ -1513,8 +1509,8 @@ export const setupGlassEffects = () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = (y - centerY) / 10;
-      const rotateY = (centerX - x) / 10;
+      const rotateX = (y - centerY) / 100;
+      const rotateY = (centerX - x) / 100;
 
       gsap.to(this, {
         rotationX: rotateX,
@@ -1535,6 +1531,33 @@ export const setupGlassEffects = () => {
   });
 };
 ```
+
+---
+
+## File: `scripts/animations/vanta-bg.js`
+```javascript
+import { vantaConfig } from '../config/vanta.config.js';
+
+let vantaEffect = null;
+
+export const initVantaBackground = () => {
+  // Wait for VANTA to be available
+  if (typeof VANTA !== 'undefined' && typeof VANTA.NET !== 'undefined') {
+    vantaEffect = VANTA.NET(vantaConfig);
+  } else {
+    console.error('VANTA NET is not loaded');
+  }
+};
+
+export const destroyVantaBackground = () => {
+  if (vantaEffect) {
+    vantaEffect.destroy();
+    vantaEffect = null;
+  }
+};
+
+export const getVantaEffect = () => vantaEffect;
+---
 
 ---
 
@@ -1698,14 +1721,17 @@ import { lenisConfig } from './config/lenis.config.js';
 import { logoIntroAnimation } from './animations/intro.js';
 import { setupScrollAnimations } from './animations/scroll.js';
 import { setupGlassEffects } from './animations/glass-effects.js';
+import { initVantaBackground } from './animations/vanta-bg.js';
 import {
   initLenis,
   setupNavigationHandlers,
 } from './navigation/router.js';
-import { setupParallax } from './utils/helpers.js';
 
 // Initialize on load
 window.addEventListener('load', () => {
+  // Initialize Vanta.js NET background first
+  initVantaBackground();
+
   // Start with logo intro animation
   logoIntroAnimation(() => {
     // After intro completes, initialize everything
@@ -1713,7 +1739,6 @@ window.addEventListener('load', () => {
     setupScrollAnimations();
     setupGlassEffects();
     setupNavigationHandlers();
-    setupParallax();
   });
 });
 ```
