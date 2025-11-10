@@ -1,6 +1,6 @@
 export const membersData = {
   programming: {
-    title: 'PROGRAMMING DIVISION',
+    title: 'PROGRAMMING',
     members: [
       { name: 'Ahmad Nur Taufiq', role: '', avatar: 'A' },
       { name: 'Alyana Diah Ramadhani Pramono', role: '', avatar: 'B' },
@@ -13,7 +13,7 @@ export const membersData = {
     ]
   },
   cinematography: {
-    title: 'CINEMATOGRAPHY DIVISION',
+    title: 'CINEMATOGRAPHY',
     members: [
       { name: 'Alif Rohman Ananto', role: '', avatar: 'I' },
       { name: 'Muhammad Fawwaz Elhakim', role: '', avatar: 'J' },
@@ -24,7 +24,7 @@ export const membersData = {
     ]
   },
   photography: {
-    title: 'PHOTOGRAPHY DIVISION',
+    title: 'PHOTOGRAPHY',
     members: [
       { name: 'Muhammad Fathurrahman Najib', role: '', avatar: 'O' },
       { name: 'Muhammad Arfan Aliy', role: '', avatar: 'P' },
@@ -38,7 +38,7 @@ export const membersData = {
     ]
   },
   technopreneurship: {
-    title: 'TECHNOPRENEURSHIP DIVISION',
+    title: 'TECHNOPRENEURSHIP',
     members: [
       { name: 'Zadira Ahmada', role: '', avatar: 'X' },
       { name: 'Sabrina Widya Rahmawati', role: '', avatar: 'Y' },
@@ -48,7 +48,7 @@ export const membersData = {
     ]
   },
   design: {
-    title: 'DESIGN DIVISION',
+    title: 'DESIGN',
     members: [
       { name: 'Kenas Romero Ardiyanta', role: '', avatar: 'C2' },
       { name: 'Nares Putri Ahmad', role: '', avatar: 'D2' },

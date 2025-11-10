@@ -1,7 +1,7 @@
 export const vantaConfig = {
   el: '#vanta-bg',
-  mouseControls: false, // Disabled for better performance
-  touchControls: false, // Disabled for better performance
+  mouseControls: true, // Disabled for better performance
+  touchControls: true, // Disabled for better performance
   gyroControls: false,
   minHeight: 200.0,
   minWidth: 200.0,

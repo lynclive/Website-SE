@@ -17,7 +17,7 @@ export const setupScrollAnimations = () => {
     {
       y: '50vh',
       borderRadius: '0px',
-      scale: 3,
+      scale: 2,
     },
     {
       scrollTrigger: {

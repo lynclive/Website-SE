@@ -24,6 +24,7 @@
 }
 
 .division-item {
+  text-decoration: none;
   width: 300px;
   height: 300px;
   flex-shrink: 0;
